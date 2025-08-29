@@ -17,43 +17,43 @@ const footerSections = [
   {
     title: "Hizmetlerimiz",
     links: [
-      "Dijital Pazarlama Stratejisi",
-      "SEO & SEM Hizmetleri",
-      "Sosyal Medya Yönetimi",
-      "Ürün Fotoğrafçılığı",
-      "Video Prodüksiyon",
-      "Marka Danışmanlığı"
+      { name: "Dijital Pazarlama Stratejisi", href: "/dijital-pazarlama-stratejisi" },
+      { name: "SEO & SEM Hizmetleri", href: "/seo-sem-hizmetleri" },
+      { name: "Sosyal Medya Yönetimi", href: "/sosyal-medya-yonetimi" },
+      { name: "Ürün Fotoğrafçılığı", href: "/urun-fotografciligi" },
+      { name: "Video Prodüksiyon", href: "/video-produksiyon" },
+      { name: "Marka Danışmanlığı", href: "/marka-danismanligi" }
     ]
   },
   {
     title: "Şirket",
     links: [
-      "Hakkımızda",
-      "Ekibimiz",
-      "Kariyer",
-      "Basın Kiti",
-      "Referanslar",
-      "İletişim"
+      { name: "Hakkımızda", href: "/hakkimizda" },
+      { name: "Hizmetlerimiz", href: "/hizmetlerimiz" },
+      { name: "Google Sıra Bulucu", href: "/google-sira-bulucu" },
+      { name: "Analiz & Raporlama", href: "/analiz-raporlama" },
+      { name: "Görsel Tasarım", href: "/gorsel-tasarim" },
+      { name: "İletişim", href: "/iletisim" }
     ]
   },
   {
-    title: "Destek",
+    title: "Paketlerimiz",
     links: [
-      "Yardım Merkezi",
-      "SSS",
-      "Teknik Destek",
-      "Canlı Destek",
-      "Eğitim Merkezi",
-      "Blog"
+      { name: "Startup Paketi", href: "/startup-paketi" },
+      { name: "Büyüme Paketi", href: "/buyume-paketi" },
+      { name: "Kurumsal Paket", href: "/kurumsal-paket" },
+      { name: "İçerik Pazarlama", href: "/icerik-pazarlamasi" },
+      { name: "Performans Optimizasyon", href: "/performans-optimizasyonu" },
+      { name: "360° Ürün Görselleştirme", href: "/360-urun-gorsellestirme" }
     ]
   }
 ];
 
 const socialLinks = [
-  { icon: Instagram, name: "Instagram", url: "#", color: "hover:text-pink-400" },
-  { icon: Linkedin, name: "LinkedIn", url: "#", color: "hover:text-blue-400" },
-  { icon: Twitter, name: "Twitter", url: "#", color: "hover:text-blue-300" },
-  { icon: Globe, name: "Website", url: "#", color: "hover:text-green-400" },
+  { icon: Instagram, name: "Instagram", url: "https://instagram.com/seoting", color: "hover:text-pink-400" },
+  { icon: Linkedin, name: "LinkedIn", url: "https://linkedin.com/company/seoting", color: "hover:text-blue-400" },
+  { icon: Twitter, name: "Twitter", url: "https://twitter.com/seoting", color: "hover:text-blue-300" },
+  { icon: Globe, name: "Website", url: "https://www.seoting.com", color: "hover:text-green-400" },
 ];
 
 export default function Footer() {
@@ -132,11 +132,11 @@ export default function Footer() {
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <motion.a
-                      href="#"
+                      href={link.href}
                       whileHover={{ x: 5 }}
                       className="text-gray-400 hover:text-primary-300 transition-all duration-300 text-sm"
                     >
-                      {link}
+                      {link.name}
                     </motion.a>
                   </li>
                 ))}
@@ -198,14 +198,14 @@ export default function Footer() {
 
             <div className="flex items-center space-x-6">
               <motion.a
-                href="#"
+                href="/hakkimizda"
                 whileHover={{ scale: 1.05 }}
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
                 Gizlilik Politikası
               </motion.a>
               <motion.a
-                href="#"
+                href="/iletisim"
                 whileHover={{ scale: 1.05 }}
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
