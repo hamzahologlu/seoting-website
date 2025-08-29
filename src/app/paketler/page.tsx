@@ -32,7 +32,7 @@ const packages = [
     id: "startup",
     name: "Startup Paketi",
     subtitle: "Yeni başlayanlar için",
-    price: "Özel Fiyat",
+    price: "25.000₺",
     originalPrice: null,
     popular: false,
     color: "from-blue-500 to-indigo-500",
@@ -62,7 +62,7 @@ const packages = [
     id: "growth",
     name: "Büyüme Paketi",
     subtitle: "Büyüyen işletmeler için",
-    price: "Özel Fiyat",
+    price: "45.000₺",
     originalPrice: null,
     popular: true,
     color: "from-green-500 to-emerald-500",
@@ -94,7 +94,7 @@ const packages = [
     id: "enterprise",
     name: "Kurumsal Paket",
     subtitle: "Büyük işletmeler için",
-    price: "Özel Fiyat",
+    price: "60.000₺",
     originalPrice: null,
     popular: false,
     color: "from-purple-500 to-pink-500",
@@ -280,7 +280,7 @@ export default function PackagesPage() {
                       
                       <div className="mb-4">
                         <div className="text-3xl font-bold text-white">{pkg.price}</div>
-                        <p className="text-gray-400 text-sm mt-1">Size özel teklif alın</p>
+                        <p className="text-gray-400 text-sm mt-1">/aylık</p>
                       </div>
                       
                       <p className="text-gray-300 text-sm leading-relaxed">{pkg.description}</p>
