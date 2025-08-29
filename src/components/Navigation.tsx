@@ -253,12 +253,13 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.div
+          <motion.a
+            href="/"
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-black font-display"
+            className="text-2xl font-black font-display cursor-pointer"
           >
             <span className="gradient-text">SEOTING</span>
-          </motion.div>
+          </motion.a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

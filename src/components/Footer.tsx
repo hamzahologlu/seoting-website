@@ -75,9 +75,9 @@ export default function Footer() {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <div className="text-3xl font-black font-display mb-4">
+            <a href="/" className="inline-block text-3xl font-black font-display mb-4 hover:scale-105 transition-transform duration-300 cursor-pointer">
               <span className="gradient-text">SEOTING</span>
-            </div>
+            </a>
             <p className="text-gray-400 mb-6 leading-relaxed">
               İstanbul merkezli dijital pazarlama ajansı olarak, markanızı 
               dijital dünyada zirveye taşıyoruz.
