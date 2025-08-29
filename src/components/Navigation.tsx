@@ -122,8 +122,8 @@ const serviceCategories = [
 
 const toolCategories = [
   {
-    title: "SEO Araçları",
-    color: "from-green-500 to-teal-500",
+    title: "Dijital Araçlar",
+    color: "from-blue-500 to-indigo-500",
     tools: [
       {
         icon: Target,
@@ -136,30 +136,6 @@ const toolCategories = [
         name: "Anahtar Kelime Analizi",
         description: "Arama hacmi ve rekabet analizi",
         href: "/anahtar-kelime-analizi"
-      },
-      {
-        icon: BarChart3,
-        name: "SEO Skoru Hesaplama",
-        description: "Web sitenizin SEO skorunu öğrenin",
-        href: "/seo-skoru"
-      }
-    ]
-  },
-  {
-    title: "Pazarlama Araçları",
-    color: "from-orange-500 to-red-500",
-    tools: [
-      {
-        icon: Calculator,
-        name: "ROI Hesaplayıcı",
-        description: "Yatırım getirinizi hesaplayın",
-        href: "/roi-hesaplayici"
-      },
-      {
-        icon: Globe,
-        name: "Website Analiz",
-        description: "Site performansını değerlendirin",
-        href: "/website-analiz"
       },
       {
         icon: Monitor,
