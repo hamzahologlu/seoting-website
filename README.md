@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SEOTING - Dijital Pazarlama Ajansı Website
 
-## Getting Started
+Bu proje, İstanbul merkezli SEOTING Dijital Pazarlama Ajansı için tasarlanmış modern ve görsel olarak etkileyici bir websitesidir.
 
-First, run the development server:
+## Özellikler
 
+- ✨ **Modern Tasarım**: Gradient renkleri, cam efektleri ve neon ışıltıları ile görsel şölen
+- 🎭 **Smooth Animasyonlar**: Framer Motion ile akıcı geçişler ve etkileşimler
+- 📱 **Responsive Tasarım**: Tüm cihazlarda mükemmel görünüm
+- ⚡ **Yüksek Performans**: Next.js 14 ile optimize edilmiş
+- 🎨 **Interaktif Elementler**: Particle efektleri ve hover animasyonları
+- 🌟 **SEO Optimize**: Meta tagları ve yapısal SEO
+
+## Teknolojiler
+
+- **Next.js 14** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **Lucide React** - Beautiful icons
+
+## Kurulum
+
+1. Bağımlılıkları yükleyin:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Geliştirme sunucusunu başlatın:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresini açın.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Proje Yapısı
 
-## Learn More
+```
+src/
+├── app/
+│   ├── globals.css      # Global styles
+│   ├── layout.tsx       # Root layout
+│   └── page.tsx         # Ana sayfa
+└── components/
+    ├── Hero.tsx         # Hero section
+    ├── Services.tsx     # Hizmetler bölümü
+    ├── About.tsx        # Hakkımızda bölümü
+    ├── Portfolio.tsx    # Portföy bölümü
+    ├── Contact.tsx      # İletişim bölümü
+    ├── Navigation.tsx   # Navigasyon
+    ├── Footer.tsx       # Footer
+    └── ParticleBackground.tsx # Particle efektleri
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Özelleştirme
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Renk Paleti
+Tailwind config dosyasında özel renk paleti tanımlanmıştır:
+- **Primary**: Mavi tonları (#3b82f6)
+- **Accent**: Mor/Pembe tonları (#d946ef)
+- **Gradients**: Çoklu renk geçişleri
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Animasyonlar
+Framer Motion ile özelleştirilmiş animasyonlar:
+- Fade in/out efektleri
+- Slide animasyonları
+- Scale transformları
+- Hover efektleri
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Vercel, Netlify veya herhangi bir Next.js uyumlu platformda deploy edilebilir:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+## Lisans
+
+Bu proje SEOTING için özel olarak geliştirilmiştir.
+
+---
+
+**SEOTING** - İstanbul'da ❤️ ile yapıldı
+
