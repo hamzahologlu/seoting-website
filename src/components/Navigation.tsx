@@ -526,7 +526,7 @@ export default function Navigation() {
             opacity: isOpen ? 1 : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden bg-black/98 backdrop-blur-lg"
+          className="md:hidden overflow-y-auto max-h-[80vh] bg-black/98 backdrop-blur-lg"
         >
           <div className="py-4 space-y-4 border-t border-white/10">
             {navItems.map((item, index) => (
@@ -570,7 +570,7 @@ export default function Navigation() {
                           opacity: showMobileMegaMenu ? 1 : 0,
                         }}
                         transition={{ duration: 0.3 }}
-                        className="overflow-hidden ml-4 space-y-4"
+                        className="overflow-y-auto max-h-[50vh] ml-4 space-y-4 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent"
                       >
                         {serviceCategories.map((category, categoryIndex) => (
                           <div key={category.title} className="space-y-2">
@@ -626,7 +626,7 @@ export default function Navigation() {
                           opacity: showMobileToolsMegaMenu ? 1 : 0,
                         }}
                         transition={{ duration: 0.3 }}
-                        className="overflow-hidden ml-4 space-y-4"
+                        className="overflow-y-auto max-h-[50vh] ml-4 space-y-4 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent"
                       >
                         {toolCategories.map((category, categoryIndex) => (
                           <div key={category.title} className="space-y-2">
