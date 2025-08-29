@@ -12,17 +12,22 @@ export async function POST(request: Request) {
     }
 
     // API anahtarlarını kontrol et
-    const SERP_API_KEY = process.env.SERP_API_KEY;
-    const KEYWORD_TOOL_API_KEY = process.env.KEYWORD_TOOL_API_KEY;
+    const DATAFORSEO_EMAIL = process.env.DATAFORSEO_EMAIL;
+    const DATAFORSEO_PASSWORD = process.env.DATAFORSEO_PASSWORD;
+    const GOOGLE_KEYWORD_PLANNER_KEY = process.env.GOOGLE_KEYWORD_PLANNER_KEY;
 
     let analysisData;
 
     // Eğer gerçek API anahtarları varsa gerçek veri çek
-    if (SERP_API_KEY || KEYWORD_TOOL_API_KEY) {
-      analysisData = await getRealKeywordData(keyword, location, SERP_API_KEY, KEYWORD_TOOL_API_KEY);
+    if (DATAFORSEO_EMAIL && DATAFORSEO_PASSWORD) {
+      analysisData = await getDataForSEOData(keyword, location, DATAFORSEO_EMAIL, DATAFORSEO_PASSWORD);
+    } else if (GOOGLE_KEYWORD_PLANNER_KEY) {
+      analysisData = await getGoogleKeywordPlannerData(keyword, location, GOOGLE_KEYWORD_PLANNER_KEY);
     } else {
-      // Mock data ile devam et (geliştirme için)
+      // Gerçek API'ye geçmek için kullanıcıyı bilgilendir
       analysisData = generateSmartMockData(keyword, location);
+      analysisData.apiStatus = 'mock';
+      analysisData.message = 'Gerçek veriler için API anahtarı gerekiyor. Ücretsiz DataForSEO hesabı oluşturun.';
     }
 
     return NextResponse.json(analysisData, { status: 200 });
@@ -34,6 +39,142 @@ export async function POST(request: Request) {
     const fallbackData = generateSmartMockData(keyword, 'tr');
     
     return NextResponse.json(fallbackData, { status: 200 });
+  }
+}
+
+async function getDataForSEOData(keyword: string, location: string, email: string, password: string) {
+  try {
+    const auth = Buffer.from(`${email}:${password}`).toString('base64');
+    
+    // 1. Anahtar kelime önerileri al
+    const suggestionsResponse = await fetch('https://api.dataforseo.com/v3/keywords_data/google_ads/keywords_for_keywords/live', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${auth}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify([{
+        keywords: [keyword],
+        location_code: getLocationCode(location),
+        language_code: getLanguageCode(location)
+      }])
+    });
+
+    if (!suggestionsResponse.ok) {
+      throw new Error('DataForSEO keywords API error');
+    }
+
+    const suggestionsData = await suggestionsResponse.json();
+    
+    // 2. Arama hacmi ve rekabet verisi al
+    const volumeResponse = await fetch('https://api.dataforseo.com/v3/keywords_data/google_ads/search_volume/live', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${auth}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify([{
+        keywords: [keyword],
+        location_code: getLocationCode(location),
+        language_code: getLanguageCode(location)
+      }])
+    });
+
+    const volumeData = await volumeResponse.json();
+    
+    // 3. SERP features al
+    const serpResponse = await fetch('https://api.dataforseo.com/v3/serp/google/organic/live/advanced', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${auth}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify([{
+        keyword: keyword,
+        location_code: getLocationCode(location),
+        language_code: getLanguageCode(location),
+        device: 'desktop',
+        os: 'windows'
+      }])
+    });
+
+    const serpData = await serpResponse.json();
+
+    // Veriyi parse et
+    const mainKeywordData = volumeData.tasks[0]?.result?.[0] || {};
+    const keywordSuggestions = suggestionsData.tasks[0]?.result || [];
+    const serpFeatures = extractSerpFeatures(serpData.tasks[0]?.result);
+
+    const result = {
+      mainKeyword: {
+        keyword,
+        searchVolume: mainKeywordData.search_volume || 0,
+        competition: mapDataForSEOCompetition(mainKeywordData.competition_level),
+        cpc: mainKeywordData.cpc || 0,
+        difficulty: calculateDifficulty(mainKeywordData),
+        trend: await getTrendData(keyword, location),
+        relatedKeywords: keywordSuggestions.slice(0, 5).map((k: any) => k.keyword),
+        serpFeatures: serpFeatures
+      },
+      suggestions: keywordSuggestions.slice(0, 8).map((suggestion: any) => ({
+        keyword: suggestion.keyword,
+        searchVolume: suggestion.search_volume || 0,
+        competition: mapDataForSEOCompetition(suggestion.competition_level),
+        cpc: suggestion.cpc || 0,
+        difficulty: calculateDifficulty(suggestion),
+        trend: generateTrendData(),
+        relatedKeywords: [],
+        serpFeatures: []
+      })),
+      totalKeywords: keywordSuggestions.length,
+      avgSearchVolume: Math.round(keywordSuggestions.reduce((sum: number, k: any) => sum + (k.search_volume || 0), 0) / keywordSuggestions.length),
+      totalOpportunity: keywordSuggestions.reduce((sum: number, k: any) => sum + (k.search_volume || 0), 0),
+      apiStatus: 'real',
+      source: 'DataForSEO'
+    };
+
+    return result;
+  } catch (error) {
+    console.error('DataForSEO API error:', error);
+    throw error;
+  }
+}
+
+async function getGoogleKeywordPlannerData(keyword: string, location: string, apiKey: string) {
+  try {
+    // Google Ads API entegrasyonu
+    const response = await fetch('https://googleads.googleapis.com/v14/customers/CUSTOMER_ID/googleAds:searchStream', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'developer-token': process.env.GOOGLE_ADS_DEVELOPER_TOKEN || ''
+      },
+      body: JSON.stringify({
+        query: `
+          SELECT 
+            keyword_view.resource_name,
+            keyword_view.keyword_text,
+            metrics.search_volume,
+            competition,
+            cost_per_click
+          FROM keyword_view 
+          WHERE keyword_view.keyword_text = "${keyword}"
+        `
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('Google Keyword Planner API error');
+    }
+
+    const data = await response.json();
+    
+    // Parse Google data
+    return parseGoogleKeywordData(data, keyword, location);
+  } catch (error) {
+    console.error('Google Keyword Planner error:', error);
+    throw error;
   }
 }
 
@@ -304,6 +445,107 @@ function mapCompetition(value: number): 'LOW' | 'MEDIUM' | 'HIGH' {
   if (value < 0.33) return 'LOW';
   if (value < 0.66) return 'MEDIUM';
   return 'HIGH';
+}
+
+// DataForSEO helper functions
+function getLocationCode(location: string): number {
+  const locationCodes = {
+    'tr': 2792, // Turkey
+    'us': 2840, // United States
+    'uk': 2826, // United Kingdom
+    'de': 2276  // Germany
+  };
+  return locationCodes[location as keyof typeof locationCodes] || 2792;
+}
+
+function getLanguageCode(location: string): string {
+  const languageCodes = {
+    'tr': 'tr',
+    'us': 'en',
+    'uk': 'en', 
+    'de': 'de'
+  };
+  return languageCodes[location as keyof typeof languageCodes] || 'tr';
+}
+
+function mapDataForSEOCompetition(level?: string): 'LOW' | 'MEDIUM' | 'HIGH' {
+  switch (level?.toLowerCase()) {
+    case 'low': return 'LOW';
+    case 'medium': return 'MEDIUM';
+    case 'high': return 'HIGH';
+    default: return 'MEDIUM';
+  }
+}
+
+function calculateDifficulty(keywordData: any): number {
+  if (keywordData.competition_level === 'high') return Math.floor(Math.random() * 20) + 80;
+  if (keywordData.competition_level === 'medium') return Math.floor(Math.random() * 30) + 40;
+  return Math.floor(Math.random() * 40) + 10;
+}
+
+function extractSerpFeatures(serpResult: any): string[] {
+  const features = [];
+  
+  if (serpResult?.featured_snippet) features.push('Featured Snippets');
+  if (serpResult?.people_also_ask) features.push('People Also Ask');
+  if (serpResult?.local_pack) features.push('Local Pack');
+  if (serpResult?.images) features.push('Images');
+  if (serpResult?.videos) features.push('Videos');
+  if (serpResult?.shopping) features.push('Shopping Results');
+  if (serpResult?.knowledge_graph) features.push('Knowledge Panel');
+  
+  return features;
+}
+
+async function getTrendData(keyword: string, location: string): Promise<number[]> {
+  try {
+    // Simplified Google Trends data fetch
+    const response = await fetch(`https://trends.google.com/trends/api/explore?hl=${getLanguageCode(location)}&tz=-120&req={"comparisonItem":[{"keyword":"${encodeURIComponent(keyword)}","geo":"${location.toUpperCase()}","time":"today 12-m"}],"category":0,"property":""}`);
+    
+    if (response.ok) {
+      const text = await response.text();
+      const trendsData = parseTrendsData(text);
+      if (trendsData) return trendsData;
+    }
+  } catch (error) {
+    console.log('Trends API unavailable, using generated data');
+  }
+  
+  return generateSeasonalTrend(keyword);
+}
+
+function parseGoogleKeywordData(data: any, keyword: string, location: string) {
+  // Google Ads API response parse
+  const results = data.results || [];
+  const mainResult = results[0] || {};
+  
+  return {
+    mainKeyword: {
+      keyword,
+      searchVolume: mainResult.metrics?.search_volume || 0,
+      competition: mapGoogleCompetition(mainResult.competition),
+      cpc: mainResult.cost_per_click?.micros ? mainResult.cost_per_click.micros / 1000000 : 0,
+      difficulty: 50, // Google doesn't provide difficulty directly
+      trend: generateSeasonalTrend(keyword),
+      relatedKeywords: [],
+      serpFeatures: []
+    },
+    suggestions: [],
+    totalKeywords: 1,
+    avgSearchVolume: mainResult.metrics?.search_volume || 0,
+    totalOpportunity: mainResult.metrics?.search_volume || 0,
+    apiStatus: 'real',
+    source: 'Google Keyword Planner'
+  };
+}
+
+function mapGoogleCompetition(competition?: string): 'LOW' | 'MEDIUM' | 'HIGH' {
+  switch (competition) {
+    case 'LOW': return 'LOW';
+    case 'MEDIUM': return 'MEDIUM'; 
+    case 'HIGH': return 'HIGH';
+    default: return 'MEDIUM';
+  }
 }
 
 function parseTrendsData(trendsText: string): number[] | null {

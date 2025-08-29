@@ -189,6 +189,16 @@ export default function KeywordAnalysisPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10"
             >
+              {/* API Status Badge */}
+              <div className="mb-6 flex justify-center">
+                <motion.a
+                  href="/anahtar-kelime-analizi/api-setup"
+                  whileHover={{ scale: 1.05 }}
+                  className="inline-block px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full border border-yellow-500/30 text-sm font-medium text-yellow-300 backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300"
+                >
+                  ⚠️ Demo Modu - Gerçek veriler için API kurulumu →
+                </motion.a>
+              </div>
               <form onSubmit={handleAnalysis} className="space-y-6">
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="md:col-span-2">
