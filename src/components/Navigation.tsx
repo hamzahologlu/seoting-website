@@ -134,7 +134,7 @@ const toolCategories = [
       {
         icon: Search,
         name: "Anahtar Kelime Analizi",
-        description: "En iyi anahtar kelimeleri keşfedin",
+        description: "Arama hacmi ve rekabet analizi",
         href: "/anahtar-kelime-analizi"
       },
       {

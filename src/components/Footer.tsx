@@ -31,6 +31,7 @@ const footerSections = [
       { name: "Hakkımızda", href: "/hakkimizda" },
       { name: "Hizmetlerimiz", href: "/hizmetlerimiz" },
       { name: "Google Sıra Bulucu", href: "/google-sira-bulucu" },
+      { name: "Anahtar Kelime Analizi", href: "/anahtar-kelime-analizi" },
       { name: "Analiz & Raporlama", href: "/analiz-raporlama" },
       { name: "Görsel Tasarım", href: "/gorsel-tasarim" },
       { name: "İletişim", href: "/iletisim" }
