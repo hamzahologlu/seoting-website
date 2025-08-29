@@ -180,38 +180,41 @@ export default function Footer() {
 
         {/* Bottom Footer */}
         <div className="py-6 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="flex items-center text-gray-400 text-sm mb-4 md:mb-0"
+              className="text-center md:text-left"
             >
-              <span>© 2024 SEOTING. Tüm hakları saklıdır.</span>
-              <span className="mx-2">•</span>
-              <span className="flex items-center">
-                İstanbul'da 
+              <div className="text-gray-400 text-sm mb-2">
+                © 2024 SEOTING. Tüm hakları saklıdır.
+              </div>
+              <div className="flex items-center justify-center md:justify-start text-gray-400 text-sm">
+                Made with 
                 <Heart size={14} className="mx-1 text-red-400" />
-                ile yapıldı
-              </span>
+                by SEOTING
+              </div>
             </motion.div>
 
-            <div className="flex items-center space-x-6">
-              <motion.a
-                href="/hakkimizda"
-                whileHover={{ scale: 1.05 }}
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                Gizlilik Politikası
-              </motion.a>
-              <motion.a
-                href="/iletisim"
-                whileHover={{ scale: 1.05 }}
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                Kullanım Koşulları
-              </motion.a>
+            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+              <div className="flex items-center space-x-4">
+                <motion.a
+                  href="/hakkimizda"
+                  whileHover={{ scale: 1.05 }}
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  Gizlilik Politikası
+                </motion.a>
+                <motion.a
+                  href="/iletisim"
+                  whileHover={{ scale: 1.05 }}
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  Kullanım Koşulları
+                </motion.a>
+              </div>
               <motion.button
                 onClick={scrollToTop}
                 whileHover={{ scale: 1.1, y: -2 }}
