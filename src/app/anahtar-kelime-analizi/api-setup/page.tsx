@@ -17,7 +17,8 @@ import {
   TrendingUp,
   Database,
   Clock,
-  Target
+  Target,
+  Star
 } from 'lucide-react';
 import { useState } from 'react';
 
