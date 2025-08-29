@@ -205,17 +205,17 @@ export default function KeywordAPISetupPage() {
                         <motion.a
                           href={
                             provider.name === 'DataForSEO' ? 'https://dataforseo.com' :
-                            provider.name === 'Google Keyword Planner' ? 'https://ads.google.com/home/tools/keyword-planner/' :
+                            provider.name === 'Google Keyword Planner' ? '/anahtar-kelime-analizi/google-setup' :
                             'https://semrush.com'
                           }
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          target={provider.name === 'Google Keyword Planner' ? '_self' : '_blank'}
+                          rel={provider.name === 'Google Keyword Planner' ? '' : 'noopener noreferrer'}
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           className="flex-1 px-4 py-3 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center space-x-2"
                         >
-                          <span>Hesap Oluştur</span>
-                          <ExternalLink size={16} />
+                          <span>{provider.name === 'Google Keyword Planner' ? 'Kurulum Rehberi' : 'Hesap Oluştur'}</span>
+                          {provider.name === 'Google Keyword Planner' ? <Target size={16} /> : <ExternalLink size={16} />}
                         </motion.a>
                       </div>
                     </div>
