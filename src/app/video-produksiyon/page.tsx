@@ -106,57 +106,6 @@ const equipment = [
   "Green Screen Setup"
 ];
 
-const packages = [
-  {
-    name: "Basic Video Package",
-    price: "8.000₺",
-    description: "Basit ürün tanıtım videosu",
-    features: [
-      "1 adet 30-60 sn video",
-      "Stüdyo çekimi",
-      "Temel montaj",
-      "Background music",
-      "HD kalite",
-      "5 gün teslimat"
-    ],
-    popular: false,
-    color: "from-cyan-500 to-blue-500"
-  },
-  {
-    name: "Professional Package",
-    price: "18.000₺",
-    description: "Kapsamlı video prodüksiyon",
-    features: [
-      "3 adet farklı uzunlukta video",
-      "Location + studio çekim",
-      "Profesyonel montaj",
-      "Color grading",
-      "Sound design",
-      "4K kalite",
-      "Sosyal medya formatları",
-      "10 gün teslimat"
-    ],
-    popular: true,
-    color: "from-purple-500 to-pink-500"
-  },
-  {
-    name: "Enterprise Package",
-    price: "Özel Fiyat",
-    description: "Sınırsız video içerik üretimi",
-    features: [
-      "Sınırsız video üretimi",
-      "Özel konsept geliştirme",
-      "Drone çekimi",
-      "Animasyon entegrasyonu",
-      "Professional actors",
-      "Tüm formatlar",
-      "Öncelikli teslimat",
-      "Dedicated team"
-    ],
-    popular: false,
-    color: "from-orange-500 to-red-500"
-  }
-];
 
 const case_studies = [
   {
@@ -226,7 +175,6 @@ export default function VideoProductionPage() {
                 <ArrowRight className="ml-2" size={20} />
               </motion.a>
               <motion.a
-                href="#packages"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/30 rounded-full font-semibold text-white transition-all duration-300"
@@ -501,76 +449,6 @@ export default function VideoProductionPage() {
         </div>
       </section>
 
-      {/* Packages */}
-      <section id="packages" className="py-16">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Video Prodüksiyon Paketleri</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              İhtiyaçlarınıza uygun video üretim paketlerimiz.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className={`glass rounded-3xl p-8 relative ${pkg.popular ? 'border-2 border-cyan-500' : ''}`}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-cyan-600 to-purple-600 px-6 py-2 rounded-full">
-                      <div className="flex items-center text-white text-sm font-semibold">
-                        <Award size={16} className="mr-2" />
-                        En Popüler
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{pkg.description}</p>
-                  <div className="flex items-baseline justify-center">
-                    <span className={`text-4xl font-bold bg-gradient-to-r ${pkg.color} bg-clip-text text-transparent`}>
-                      {pkg.price}
-                    </span>
-                  </div>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-sm text-gray-300">
-                      <CheckCircle2 size={16} className="text-cyan-400 mr-3 flex-shrink-0 mt-0.5" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <motion.a
-                  href="/iletisim"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`block w-full px-6 py-3 bg-gradient-to-r ${pkg.color} rounded-lg font-semibold text-white transition-all duration-300 text-center ${pkg.popular ? 'neon-glow' : ''}`}
-                >
-                  {pkg.price === "Özel Fiyat" ? "Teklif Al" : "Paketi Seç"}
-                </motion.a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-16">

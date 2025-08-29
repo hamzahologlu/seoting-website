@@ -120,57 +120,6 @@ const caseStudies = [
   }
 ];
 
-const packages = [
-  {
-    name: "Sosyal Medya Başlangıç",
-    price: "12.000₺",
-    period: "/aylık",
-    description: "2 platform yönetimi ve temel içerik",
-    features: [
-      "2 sosyal medya platformu",
-      "Aylık 20 gönderi",
-      "Temel grafik tasarım",
-      "Community management",
-      "Aylık performans raporu"
-    ],
-    popular: false,
-    color: "from-pink-500 to-purple-500"
-  },
-  {
-    name: "Sosyal Medya Pro",
-    price: "25.000₺",
-    period: "/aylık",
-    description: "4 platform + reklam yönetimi",
-    features: [
-      "4 sosyal medya platformu",
-      "Aylık 40 gönderi + 8 video",
-      "Profesyonel fotoğraf çekimi",
-      "Sosyal medya reklamları",
-      "Influencer kampanyaları",
-      "24/7 community management",
-      "Haftalık raporlama"
-    ],
-    popular: true,
-    color: "from-blue-500 to-purple-500"
-  },
-  {
-    name: "Enterprise Sosyal Medya",
-    price: "Özel Fiyat",
-    period: "",
-    description: "Sınırsız platform ve özel stratejiler",
-    features: [
-      "Tüm sosyal medya platformları",
-      "Sınırsız içerik üretimi",
-      "Özel kampanyalar",
-      "Crisis management",
-      "Dedicated team",
-      "Real-time monitoring",
-      "C-level reporting"
-    ],
-    popular: false,
-    color: "from-green-500 to-blue-500"
-  }
-];
 
 export default function SocialMediaPage() {
   return (
@@ -213,7 +162,6 @@ export default function SocialMediaPage() {
                 <ArrowRight className="ml-2" size={20} />
               </motion.a>
               <motion.a
-                href="#packages"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/30 rounded-full font-semibold text-white transition-all duration-300"
@@ -433,77 +381,6 @@ export default function SocialMediaPage() {
         </div>
       </section>
 
-      {/* Packages */}
-      <section id="packages" className="py-16">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Sosyal Medya Paketleri</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              İhtiyaçlarınıza uygun sosyal medya yönetimi paketlerimiz.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className={`glass rounded-3xl p-8 relative ${pkg.popular ? 'border-2 border-pink-500' : ''}`}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-pink-600 to-purple-600 px-6 py-2 rounded-full">
-                      <div className="flex items-center text-white text-sm font-semibold">
-                        <Award size={16} className="mr-2" />
-                        En Popüler
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{pkg.description}</p>
-                  <div className="flex items-baseline justify-center">
-                    <span className={`text-4xl font-bold bg-gradient-to-r ${pkg.color} bg-clip-text text-transparent`}>
-                      {pkg.price}
-                    </span>
-                    <span className="text-gray-400 ml-1">{pkg.period}</span>
-                  </div>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-sm text-gray-300">
-                      <CheckCircle2 size={16} className="text-pink-400 mr-3 flex-shrink-0 mt-0.5" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <motion.a
-                  href="/iletisim"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`block w-full px-6 py-3 bg-gradient-to-r ${pkg.color} rounded-lg font-semibold text-white transition-all duration-300 text-center ${pkg.popular ? 'neon-glow' : ''}`}
-                >
-                  {pkg.price === "Özel Fiyat" ? "Teklif Al" : "Paketi Seç"}
-                </motion.a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-16">

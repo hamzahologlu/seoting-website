@@ -34,7 +34,7 @@ const mainServices = [
         title: "Dijital Pazarlama Stratejisi",
         description: "Markanız için özel dijital pazarlama stratejileri oluşturuyoruz.",
         features: ["Hedef Kitle Analizi", "Rakip Analizi", "KPI Belirleme", "Strateji Roadmap"],
-        price: "15.000₺'den başlayan fiyatlarla",
+
         link: "/dijital-pazarlama-stratejisi"
       },
       {
@@ -42,7 +42,7 @@ const mainServices = [
         title: "SEO & SEM Hizmetleri",
         description: "Arama motorlarında görünürlüğünüzü maksimum seviyeye çıkarıyoruz.",
         features: ["Teknik SEO", "İçerik SEO", "Google Ads", "Bing Ads"],
-        price: "8.000₺'den başlayan fiyatlarla",
+
         link: "/seo-sem-hizmetleri"
       },
       {
@@ -50,7 +50,6 @@ const mainServices = [
         title: "Sosyal Medya Yönetimi",
         description: "Tüm sosyal medya platformlarında etkili varlık oluşturuyoruz.",
         features: ["İçerik Üretimi", "Community Management", "Influencer İşbirlikleri", "Reklam Yönetimi"],
-        price: "12.000₺'den başlayan fiyatlarla",
         link: "/sosyal-medya-yonetimi"
       },
       {
@@ -58,7 +57,6 @@ const mainServices = [
         title: "Analiz & Raporlama",
         description: "Detaylı analizlerle performansınızı sürekli optimize ediyoruz.",
         features: ["Google Analytics", "Sosyal Medya Analitiği", "ROI Raporları", "A/B Test Analizleri"],
-        price: "5.000₺'den başlayan fiyatlarla",
         link: "/analiz-raporlama"
       }
     ]
@@ -74,7 +72,6 @@ const mainServices = [
         title: "Profesyonel Ürün Fotoğrafçılığı",
         description: "Ürünlerinizi en etkileyici açılardan görselleştiriyoruz.",
         features: ["Stüdyo Çekimi", "Lifestyle Çekimi", "Packshot Çekimi", "360° Fotoğraf"],
-        price: "2.500₺'den başlayan fiyatlarla",
         link: "/urun-fotografciligi"
       },
       {
@@ -82,7 +79,7 @@ const mainServices = [
         title: "Video Prodüksiyon",
         description: "Dinamik ve etkileyici ürün tanıtım videoları üretiyoruz.",
         features: ["Ürün Tanıtım Videoları", "Kurumsal Videolar", "Sosyal Medya Videoları", "Animasyon"],
-        price: "8.000₺'den başlayan fiyatlarla",
+
         link: "/video-produksiyon"
       },
       {
@@ -90,7 +87,6 @@ const mainServices = [
         title: "Görsel Tasarım",
         description: "Markanızın kimliğini yansıtan yaratıcı tasarımlar geliştiriyoruz.",
         features: ["Katalog Tasarımı", "Sosyal Medya Görselleri", "Banner Tasarımı", "Infografik"],
-        price: "3.000₺'den başlayan fiyatlarla",
         link: "/gorsel-tasarim"
       },
       {
@@ -98,7 +94,6 @@ const mainServices = [
         title: "360° Ürün Görselleştirme",
         description: "İnteraktif 360 derece ürün deneyimleri oluşturuyoruz.",
         features: ["360° Fotoğraf", "Sanal Tur", "AR Deneyimi", "3D Modelleme"],
-        price: "5.000₺'den başlayan fiyatlarla",
         link: "/360-urun-gorsellestirme"
       }
     ]
@@ -112,7 +107,6 @@ const additionalServices = [
     description: "Markanızın dijital dönüşüm yolculuğunda rehberlik ediyoruz.",
     features: ["Marka Kimliği", "Pozisyonlama", "Dijital Strateji", "Rebranding"],
     color: "from-yellow-400 to-orange-500",
-    price: "20.000₺'den başlayan fiyatlarla",
     link: "/marka-danismanligi"
   },
   {
@@ -121,7 +115,6 @@ const additionalServices = [
     description: "Hedef kitlenizi etkileyen yaratıcı içerikler üretiyoruz.",
     features: ["Blog Yazıları", "Video İçerikler", "Podcast", "E-kitap"],
     color: "from-green-400 to-emerald-500",
-    price: "6.000₺'den başlayan fiyatlarla",
     link: "/icerik-pazarlamasi"
   },
   {
@@ -130,64 +123,11 @@ const additionalServices = [
     description: "Kampanyalarınızın ROI'sini maksimum seviyeye çıkarıyoruz.",
     features: ["Conversion Optimization", "Landing Page Optimizasyonu", "A/B Testing", "UX İyileştirme"],
     color: "from-indigo-400 to-purple-500",
-    price: "10.000₺'den başlayan fiyatlarla",
     link: "/performans-optimizasyonu"
   }
 ];
 
-const packages = [
-  {
-    name: "Startup Paketi",
-    price: "25.000₺",
-    period: "/aylık",
-    description: "Yeni kurulan işletmeler için temel dijital pazarlama paketi",
-    features: [
-      "Temel SEO optimizasyonu",
-      "2 sosyal medya platformu yönetimi",
-      "Aylık 20 gönderi",
-      "Temel analiz raporları",
-      "E-posta desteği"
-    ],
-    popular: false,
-    color: "from-blue-500 to-blue-600",
-    link: "/startup-paketi"
-  },
-  {
-    name: "Büyüme Paketi",
-    price: "45.000₺",
-    period: "/aylık",
-    description: "Büyüyen işletmeler için kapsamlı dijital pazarlama çözümü",
-    features: [
-      "Kapsamlı SEO & SEM",
-      "4 sosyal medya platformu yönetimi",
-      "Aylık 40 gönderi + 10 ürün çekimi",
-      "Detaylı analiz raporları",
-      "Telefon + e-posta desteği",
-      "Aylık strateji toplantısı"
-    ],
-    popular: true,
-    color: "from-purple-500 to-pink-500",
-    link: "/buyume-paketi"
-  },
-  {
-    name: "Kurumsal Paket",
-    price: "Özel Fiyat",
-    period: "",
-    description: "Büyük şirketler için özelleştirilmiş dijital pazarlama çözümü",
-    features: [
-      "Tam kapsamlı dijital pazarlama",
-      "Sınırsız sosyal medya yönetimi",
-      "Özel içerik üretimi",
-      "Gerçek zamanlı raporlama",
-      "7/24 destek",
-      "Özel hesap yöneticisi",
-      "Özel strateji geliştirme"
-    ],
-    popular: false,
-    color: "from-green-500 to-emerald-500",
-    link: "/kurumsal-paket"
-  }
-];
+
 
 export default function ServicesPage() {
   return (
@@ -300,7 +240,7 @@ export default function ServicesPage() {
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="text-primary-400 font-semibold">{service.price}</span>
+
                         {service.link ? (
                           <motion.a
                             href={service.link}
@@ -376,7 +316,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-primary-400 font-semibold text-sm">{service.price}</span>
+
                   {service.link ? (
                     <motion.a
                       href={service.link}
@@ -402,77 +342,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Packages */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Paket Hizmetlerimiz</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              İhtiyaçlarınıza göre özel olarak hazırlanmış, uygun fiyatlı paket seçeneklerimiz.
-            </p>
-          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className={`glass rounded-3xl p-8 relative ${pkg.popular ? 'border-2 border-gradient' : ''}`}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-2 rounded-full">
-                      <div className="flex items-center text-white text-sm font-semibold">
-                        <Award size={16} className="mr-2" />
-                        En Popüler
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{pkg.description}</p>
-                  <div className="flex items-baseline justify-center">
-                    <span className={`text-4xl font-bold bg-gradient-to-r ${pkg.color} bg-clip-text text-transparent`}>
-                      {pkg.price}
-                    </span>
-                    <span className="text-gray-400 ml-1">{pkg.period}</span>
-                  </div>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-sm text-gray-300">
-                      <CheckCircle2 size={16} className="text-green-400 mr-3 flex-shrink-0 mt-0.5" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <motion.a
-                  href={pkg.link}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`block w-full px-6 py-3 bg-gradient-to-r ${pkg.color} rounded-lg font-semibold text-white transition-all duration-300 text-center ${pkg.popular ? 'neon-glow' : ''}`}
-                >
-                  {pkg.price === "Özel Fiyat" ? "Teklif Al" : "Paketi Seç"}
-                </motion.a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-16">
@@ -491,14 +361,23 @@ export default function ServicesPage() {
               <p className="text-gray-300 mb-6 text-lg">
                 Uzman ekibimizle tanışın ve projeniz için en uygun çözümü birlikte belirleyelim.
               </p>
-              <div className="flex justify-center">
-                <motion.button
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.a
+                  href="/iletisim"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 rounded-full font-semibold text-white transition-all duration-300 neon-glow"
                 >
                   Ücretsiz Danışmanlık Al
-                </motion.button>
+                </motion.a>
+                <motion.a
+                  href="/paketler"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-white/30 rounded-full font-semibold text-white transition-all duration-300"
+                >
+                  Paketleri Keşfet
+                </motion.a>
               </div>
             </div>
           </motion.div>

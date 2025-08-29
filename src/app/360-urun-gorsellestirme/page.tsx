@@ -74,58 +74,6 @@ const benefits = [
   }
 ];
 
-const packages = [
-  {
-    name: "Temel 360°",
-    price: "5.000₺",
-    period: "/proje",
-    description: "Küçük ürünler için temel 360° paket",
-    features: [
-      "24 nokta 360° çekim",
-      "HD kalite görüntü",
-      "Web viewer dahil",
-      "Temel düzenleme",
-      "5 gün teslimat"
-    ],
-    popular: false,
-    color: "from-blue-500 to-cyan-500"
-  },
-  {
-    name: "Profesyonel 360°",
-    price: "12.000₺",
-    period: "/proje",
-    description: "Orta ölçekli projeler için gelişmiş paket",
-    features: [
-      "36 nokta 360° çekim",
-      "4K kalite görüntü",
-      "İnteraktif hotspotlar",
-      "Zoom özelliği",
-      "Mobil optimizasyon",
-      "API entegrasyonu",
-      "3 gün teslimat"
-    ],
-    popular: true,
-    color: "from-purple-500 to-pink-500"
-  },
-  {
-    name: "Premium AR",
-    price: "25.000₺",
-    period: "/proje",
-    description: "AR özellikli premium deneyim paketi",
-    features: [
-      "48 nokta 360° çekim",
-      "8K kalite görüntü",
-      "AR viewer dahil",
-      "3D model oluşturma",
-      "Animasyon desteği",
-      "Custom branding",
-      "Analytics dashboard",
-      "24 saat teslimat"
-    ],
-    popular: false,
-    color: "from-emerald-500 to-green-500"
-  }
-];
 
 const useCases = [
   { name: "E-ticaret", description: "Online mağazalarda ürün deneyimi" },

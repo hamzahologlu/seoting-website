@@ -136,57 +136,6 @@ const case_studies = [
   }
 ];
 
-const packages = [
-  {
-    name: "Brand Foundation",
-    price: "25.000₺",
-    description: "Temel marka stratejisi ve kimlik paketi",
-    features: [
-      "Brand audit & research",
-      "Brand strategy development",
-      "Basic visual identity",
-      "Brand guidelines",
-      "Implementation roadmap"
-    ],
-    duration: "6-8 hafta",
-    popular: false,
-    color: "from-indigo-500 to-purple-500"
-  },
-  {
-    name: "Complete Rebrand",
-    price: "65.000₺",
-    description: "Kapsamlı marka yenileme projesi",
-    features: [
-      "Comprehensive brand audit",
-      "Strategic repositioning",
-      "Complete visual identity",
-      "Brand architecture",
-      "Digital brand guidelines",
-      "Launch strategy",
-      "Staff training"
-    ],
-    duration: "10-12 hafta",
-    popular: true,
-    color: "from-blue-500 to-cyan-500"
-  },
-  {
-    name: "Enterprise Branding",
-    price: "Özel Fiyat",
-    description: "Kurumsal seviye marka danışmanlığı",
-    features: [
-      "Full brand transformation",
-      "Global brand strategy",
-      "Portfolio optimization",
-      "Digital ecosystem design",
-      "Change management",
-      "Ongoing consultancy",
-      "C-level presentations"
-    ],
-    duration: "6+ ay",
-    popular: false,
-    color: "from-emerald-500 to-teal-500"
-  }
-];
 
 const expertise_areas = [
   "B2B Brand Strategy",
@@ -240,7 +189,6 @@ export default function BrandConsultingPage() {
                 <ArrowRight className="ml-2" size={20} />
               </motion.a>
               <motion.a
-                href="#packages"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/30 rounded-full font-semibold text-white transition-all duration-300"
@@ -520,77 +468,6 @@ export default function BrandConsultingPage() {
         </div>
       </section>
 
-      {/* Packages */}
-      <section id="packages" className="py-16">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Danışmanlık Paketleri</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              İhtiyaçlarınıza uygun marka danışmanlığı paketlerimiz.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className={`glass rounded-3xl p-8 relative ${pkg.popular ? 'border-2 border-indigo-500' : ''}`}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 px-6 py-2 rounded-full">
-                      <div className="flex items-center text-white text-sm font-semibold">
-                        <Award size={16} className="mr-2" />
-                        En Popüler
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{pkg.description}</p>
-                  <div className="flex items-baseline justify-center mb-2">
-                    <span className={`text-4xl font-bold bg-gradient-to-r ${pkg.color} bg-clip-text text-transparent`}>
-                      {pkg.price}
-                    </span>
-                  </div>
-                  <span className="text-gray-400 text-sm">{pkg.duration}</span>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-sm text-gray-300">
-                      <CheckCircle2 size={16} className="text-indigo-400 mr-3 flex-shrink-0 mt-0.5" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <motion.a
-                  href="/iletisim"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`block w-full px-6 py-3 bg-gradient-to-r ${pkg.color} rounded-lg font-semibold text-white transition-all duration-300 text-center ${pkg.popular ? 'neon-glow' : ''}`}
-                >
-                  {pkg.price === "Özel Fiyat" ? "Teklif Al" : "Paketi Seç"}
-                </motion.a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-16">
