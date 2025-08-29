@@ -25,7 +25,9 @@ import {
   Search,
   MessageCircle,
   Video,
-  Palette
+  Palette,
+  Monitor,
+  Gauge
 } from 'lucide-react';
 
 const quickServices = [
@@ -586,12 +588,137 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
 
+      {/* Digital Tools Section */}
+      <section id="tools" className="py-20 bg-gradient-to-b from-gray-900/50 to-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-500/30 text-sm font-medium text-blue-300 backdrop-blur-sm mb-6">
+              🛠️ Ücretsiz Dijital Araçlar
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black font-display mb-6">
+              <span className="gradient-text">Profesyonel SEO Araçları</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Web sitenizin performansını analiz edin, anahtar kelime araştırması yapın ve Google sıralama durumunuzu takip edin.
+            </p>
+          </motion.div>
 
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                icon: Target,
+                title: "Google Sıra Bulucu",
+                description: "Web sitenizin Google'daki sırasını gerçek zamanlı kontrol edin",
+                features: ["Gerçek Google API", "Mobil & Masaüstü", "Ülke Bazlı Analiz", "Anlık Sonuçlar"],
+                color: "from-green-500 to-teal-500",
+                href: "/google-sira-bulucu",
+                badge: "API Aktif"
+              },
+              {
+                icon: Search,
+                title: "Anahtar Kelime Analizi",
+                description: "DataForSEO ile profesyonel anahtar kelime araştırması yapın",
+                features: ["Arama Hacmi", "Rekabet Analizi", "CPC Verileri", "Trend Takibi"],
+                color: "from-blue-500 to-indigo-500", 
+                href: "/anahtar-kelime-analizi",
+                badge: "Canlı Veriler"
+              },
+              {
+                icon: Gauge,
+                title: "Sayfa Hızı Testi",
+                description: "Google PageSpeed Insights ile performans analizi yapın",
+                features: ["Core Web Vitals", "Optimizasyon Önerileri", "Mobil & Masaüstü", "Detaylı Rapor"],
+                color: "from-purple-500 to-pink-500",
+                href: "/sayfa-hizi-testi", 
+                badge: "PageSpeed API"
+              }
+            ].map((tool, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <motion.a
+                  href={tool.href}
+                  whileHover={{ y: -10, boxShadow: "0 25px 50px rgba(0,0,0,0.3)" }}
+                  className="block h-full"
+                >
+                  <div className="glass rounded-3xl p-8 h-full border border-white/10 hover:border-white/20 transition-all duration-500 relative overflow-hidden">
+                    {/* Background Gradient */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-5 group-hover:opacity-10 transition-opacity duration-500`} />
+                    
+                    {/* Badge */}
+                    <div className="flex justify-between items-start mb-6">
+                      <div className={`p-4 rounded-2xl bg-gradient-to-br ${tool.color} bg-opacity-20 backdrop-blur-sm border border-white/10`}>
+                        <tool.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <span className="px-3 py-1 bg-green-500/20 text-green-300 text-xs font-medium rounded-full border border-green-500/30">
+                        {tool.badge}
+                      </span>
+                    </div>
 
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:gradient-text transition-all duration-300">
+                      {tool.title}
+                    </h3>
+                    
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      {tool.description}
+                    </p>
 
-      {/* CTA Section */}
+                    <div className="space-y-3 mb-8">
+                      {tool.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
+                          <span className="text-gray-300 text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <motion.div
+                      className="flex items-center gap-2 text-white font-semibold group-hover:gap-4 transition-all duration-300"
+                      whileHover={{ x: 5 }}
+                    >
+                      <span>Şimdi Test Et</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </motion.div>
+                  </div>
+                </motion.a>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full font-semibold text-white transition-all duration-300 gap-2"
+            >
+              <Monitor className="w-5 h-5" />
+              Tüm Araçları Keşfet
+              <ArrowRight className="w-5 h-5" />
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */
       <section className="py-24 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
