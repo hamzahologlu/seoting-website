@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { 
   Key, 
   Search, 
@@ -276,6 +277,8 @@ GOOGLE_CUSTOM_SEARCH_ENGINE_ID=your_search_engine_id_here`}
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }

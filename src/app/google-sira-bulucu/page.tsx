@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { 
   Search, 
   Target, 
@@ -497,6 +498,8 @@ export default function GoogleRankCheckerPage() {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }
