@@ -269,8 +269,8 @@ export default function Navigation() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-black/80 backdrop-blur-md border-b border-white/10' 
+        scrolled || isOpen
+          ? 'bg-black/95 backdrop-blur-md border-b border-white/10' 
           : 'bg-transparent'
       }`}
     >
@@ -526,7 +526,7 @@ export default function Navigation() {
             opacity: isOpen ? 1 : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden"
+          className="md:hidden overflow-hidden bg-black/98 backdrop-blur-lg"
         >
           <div className="py-4 space-y-4 border-t border-white/10">
             {navItems.map((item, index) => (
