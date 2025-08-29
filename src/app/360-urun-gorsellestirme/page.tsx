@@ -240,69 +240,6 @@ export default function Product360Page() {
         </div>
       </section>
 
-      {/* Packages Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-black font-display mb-6">
-              <span className="gradient-text">360°</span> <span className="text-white">Paketlerimiz</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Projenize uygun 360° görselleştirme paketini seçin.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`glass rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 ${pkg.popular ? 'ring-2 ring-cyan-500/50' : ''}`}
-              >
-                {pkg.popular && (
-                  <div className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-full text-center mb-6">
-                    En Popüler
-                  </div>
-                )}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                  <div className="text-4xl font-black text-white mb-2">
-                    {pkg.price}<span className="text-lg text-gray-400">{pkg.period}</span>
-                  </div>
-                  <p className="text-gray-400">{pkg.description}</p>
-                </div>
-                
-                <div className="space-y-4 mb-8">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center">
-                      <CheckCircle2 size={16} className="text-green-400 mr-3 flex-shrink-0" />
-                      <span className="text-gray-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <motion.a
-                  href="/iletisim"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`block w-full px-6 py-3 bg-gradient-to-r ${pkg.color} rounded-lg font-semibold text-white transition-all duration-300 text-center ${pkg.popular ? 'neon-glow' : ''}`}
-                >
-                  Paketi Seç
-                </motion.a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Use Cases Section */}
       <section className="py-24 bg-gradient-to-br from-black via-gray-900 to-black">
