@@ -1,0 +1,28 @@
+{
+  "name": "SEOTING - Dijital Pazarlama Ajansı",
+  "short_name": "SEOTING",
+  "description": "İstanbul merkezli dijital pazarlama ve ürün çekim hizmetleri",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#5B5CE6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
