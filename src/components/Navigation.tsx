@@ -27,7 +27,7 @@ import {
 const navItems: Array<{ name: string; href: string; hasDropdown?: boolean }> = [
   { name: 'Ana Sayfa', href: '/' },
   { name: 'Hizmetler', href: '/hizmetlerimiz', hasDropdown: true },
-  { name: 'Araçlar', href: '/google-sira-bulucu', hasDropdown: true },
+  { name: 'Araçlar', href: '/araclar', hasDropdown: true },
   { name: 'Hakkımızda', href: '/hakkimizda' },
   { name: 'İletişim', href: '/iletisim' },
 ];
@@ -482,7 +482,7 @@ export default function Navigation() {
             
             <div className="mt-8 pt-6 border-t border-white/10 text-center">
               <motion.a
-                href="/google-sira-bulucu"
+                href="/araclar"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-500 hover:to-teal-500 rounded-full font-semibold text-white transition-all duration-300 neon-glow"
