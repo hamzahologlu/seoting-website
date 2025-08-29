@@ -6,7 +6,7 @@ import ParticleBackground from './ParticleBackground';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden animated-bg">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden animated-bg pt-20 sm:pt-24">
       <ParticleBackground />
       
       {/* Floating elements */}
@@ -75,7 +75,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-6"
+          className="mb-6 mt-8 sm:mt-4 relative z-40"
         >
           <span className="inline-block px-4 py-2 bg-gradient-to-r from-primary-500/20 to-accent-500/20 rounded-full border border-primary-500/30 text-sm font-medium text-primary-300 backdrop-blur-sm">
             ✨ Türkiye'nin Önde Gelen Dijital Ajansı
