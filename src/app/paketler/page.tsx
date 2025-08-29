@@ -258,8 +258,8 @@ export default function PackagesPage() {
                     
                     {/* Popular Badge */}
                     {pkg.popular && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                        <span className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg">
                           <Star className="w-4 h-4" />
                           En Popüler
                         </span>
@@ -280,7 +280,7 @@ export default function PackagesPage() {
                       
                       <div className="mb-4">
                         <div className="text-3xl font-bold text-white">{pkg.price}</div>
-                        <p className="text-gray-400 text-sm mt-1">/aylık</p>
+                        <p className="text-gray-400 text-sm mt-1">/aylık +KDV</p>
                       </div>
                       
                       <p className="text-gray-300 text-sm leading-relaxed">{pkg.description}</p>
