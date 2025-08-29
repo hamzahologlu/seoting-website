@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -48,7 +48,32 @@ export default function KeywordAnalysisPage() {
   const [location, setLocation] = useState('tr');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [results, setResults] = useState<AnalysisResult | null>(null);
+  const [apiStatus, setApiStatus] = useState<'checking' | 'demo' | 'active'>('checking');
   const [analysisHistory, setAnalysisHistory] = useState<string[]>([]);
+
+  // Check API status on component mount
+  useEffect(() => {
+    const checkApiStatus = async () => {
+      try {
+        const response = await fetch('/api/keyword-analysis', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ keyword: 'test', location: 'tr' })
+        });
+        const data = await response.json();
+        
+        if (data.apiStatus === 'real' || data.source === 'DataForSEO') {
+          setApiStatus('active');
+        } else {
+          setApiStatus('demo');
+        }
+      } catch (error) {
+        setApiStatus('demo');
+      }
+    };
+
+    checkApiStatus();
+  }, []);
 
   const handleAnalysis = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -191,13 +216,36 @@ export default function KeywordAnalysisPage() {
             >
               {/* API Status Badge */}
               <div className="mb-6 flex justify-center">
-                <motion.a
-                  href="/anahtar-kelime-analizi/api-setup"
-                  whileHover={{ scale: 1.05 }}
-                  className="inline-block px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full border border-yellow-500/30 text-sm font-medium text-yellow-300 backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300"
-                >
-                  ⚠️ Demo Modu - Gerçek veriler için API kurulumu →
-                </motion.a>
+                {apiStatus === 'checking' && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-full border border-blue-500/30 text-sm font-medium text-blue-300 backdrop-blur-sm"
+                  >
+                    <Loader2 className="w-4 h-4 inline mr-2 animate-spin" />
+                    API Durumu Kontrol Ediliyor...
+                  </motion.div>
+                )}
+                
+                {apiStatus === 'active' && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="inline-block px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full border border-green-500/30 text-sm font-medium text-green-300 backdrop-blur-sm"
+                  >
+                    ✅ Gerçek DataForSEO API Aktif - Canlı Veriler Geliyor!
+                  </motion.div>
+                )}
+                
+                {apiStatus === 'demo' && (
+                  <motion.a
+                    href="/anahtar-kelime-analizi/api-setup"
+                    whileHover={{ scale: 1.05 }}
+                    className="inline-block px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full border border-yellow-500/30 text-sm font-medium text-yellow-300 backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300"
+                  >
+                    ⚠️ Demo Modu - Gerçek veriler için API kurulumu →
+                  </motion.a>
+                )}
               </div>
               <form onSubmit={handleAnalysis} className="space-y-6">
                 <div className="grid md:grid-cols-3 gap-4">
