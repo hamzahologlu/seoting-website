@@ -153,6 +153,21 @@ const additionalServices = [
   }
 ];
 
+const comparisonFeatures = [
+  { feature: "Web Sitesi Tasarımı", startup: "Temel", growth: "Profesyonel", enterprise: "Kurumsal Platform" },
+  { feature: "SEO Optimizasyonu", startup: "Temel", growth: "Gelişmiş", enterprise: "360° SEO Stratejisi" },
+  { feature: "Google Ads Yönetimi", startup: "❌", growth: "✅", enterprise: "Çoklu Platform" },
+  { feature: "Sosyal Medya Yönetimi", startup: "2 Platform", growth: "4 Platform", enterprise: "Sınırsız" },
+  { feature: "Aylık İçerik Üretimi", startup: "10 Post", growth: "30 Post", enterprise: "Sınırsız" },
+  { feature: "Video Prodüksiyon", startup: "❌", growth: "❌", enterprise: "✅" },
+  { feature: "Ürün Çekimi", startup: "❌", growth: "10 Ürün", enterprise: "Profesyonel" },
+  { feature: "Analytics & Raporlama", startup: "Aylık", growth: "Haftalık", enterprise: "Günlük" },
+  { feature: "Hesap Yöneticisi", startup: "❌", growth: "❌", enterprise: "Özel" },
+  { feature: "Destek", startup: "Email & Telefon", growth: "7/24 Öncelikli", enterprise: "Premium 7/24" },
+  { feature: "Strateji Toplantısı", startup: "❌", growth: "Aylık", enterprise: "Haftalık" },
+  { feature: "Kurulum Süresi", startup: "2-3 Hafta", growth: "3-4 Hafta", enterprise: "4-6 Hafta" }
+];
+
 const whyChooseUs = [
   {
     icon: Shield,
@@ -258,11 +273,11 @@ export default function PackagesPage() {
                     
                     {/* Popular Badge */}
                     {pkg.popular && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                        <span className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg">
-                          <Star className="w-4 h-4" />
-                          En Popüler
-                        </span>
+                      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+                        <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1 shadow-xl border-2 border-white">
+                          <Star className="w-3 h-3 fill-white" />
+                          EN POPÜLER
+                        </div>
                       </div>
                     )}
 
@@ -376,6 +391,117 @@ export default function PackagesPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Package Comparison Table */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Paket Karşılaştırması
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Hangi paketin ihtiyaçlarınıza en uygun olduğunu detaylı karşılaştırma tablosundan görebilirsiniz
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="overflow-x-auto"
+          >
+            <div className="glass rounded-3xl p-1 border border-white/10">
+              <table className="w-full">
+                <thead>
+                  <tr>
+                    <th className="text-left p-6 text-gray-300 font-semibold">Özellikler</th>
+                    <th className="text-center p-6">
+                      <div className="flex flex-col items-center">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-3">
+                          <Rocket className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold text-white">Startup</h3>
+                        <p className="text-blue-400 font-semibold">25.000₺/ay</p>
+                      </div>
+                    </th>
+                    <th className="text-center p-6 relative">
+                      <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                        <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                          EN POPÜLER
+                        </div>
+                      </div>
+                      <div className="flex flex-col items-center pt-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-3">
+                          <TrendingUp className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold text-white">Büyüme</h3>
+                        <p className="text-green-400 font-semibold">45.000₺/ay</p>
+                      </div>
+                    </th>
+                    <th className="text-center p-6">
+                      <div className="flex flex-col items-center">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-3">
+                          <Crown className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold text-white">Kurumsal</h3>
+                        <p className="text-purple-400 font-semibold">60.000₺/ay</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonFeatures.map((item, index) => (
+                    <motion.tr
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.05 }}
+                      viewport={{ once: true }}
+                      className="border-t border-white/10 hover:bg-white/5 transition-colors"
+                    >
+                      <td className="p-4 text-gray-300 font-medium">{item.feature}</td>
+                      <td className="p-4 text-center text-gray-300">{item.startup}</td>
+                      <td className="p-4 text-center text-gray-300 bg-green-500/10">{item.growth}</td>
+                      <td className="p-4 text-center text-gray-300">{item.enterprise}</td>
+                    </motion.tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <p className="text-gray-400 mb-6">
+              Hangi paketin size uygun olduğunu belirlemek için ücretsiz danışmanlık alabilirsiniz
+            </p>
+            <motion.a
+              href="/iletisim"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full font-semibold text-white transition-all duration-300 gap-2"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Ücretsiz Danışmanlık Al
+              <ArrowRight className="w-5 h-5" />
+            </motion.a>
+          </motion.div>
         </div>
       </section>
 
