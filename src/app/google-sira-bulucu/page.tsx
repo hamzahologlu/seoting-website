@@ -17,8 +17,7 @@ import {
   Star,
   ArrowRight,
   Loader2,
-  MapPin,
-  Settings
+  MapPin
 } from 'lucide-react';
 
 interface RankResult {
@@ -143,21 +142,11 @@ export default function GoogleRankCheckerPage() {
               <span className="text-green-400 font-semibold"> SEO performansınızı takip edin</span>.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex justify-center">
               <div className="inline-flex items-center px-4 py-2 bg-green-500/20 rounded-full border border-green-500/30 text-green-300 text-sm">
                 <CheckCircle size={16} className="mr-2" />
                 ✅ Gerçek Google API Aktif - Canlı Veriler Geliyor!
               </div>
-              
-              <motion.a
-                href="/google-sira-bulucu/api-setup"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full border border-purple-500/30 text-purple-300 text-sm hover:bg-purple-500/30 transition-colors"
-              >
-                <Settings size={16} className="mr-2" />
-                API Yapılandırma
-              </motion.a>
             </div>
           </motion.div>
 
