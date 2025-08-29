@@ -14,8 +14,6 @@ import {
   Globe,
   CheckCircle2,
   Star,
-  Quote,
-  Play,
   Zap,
   Shield,
   Clock,

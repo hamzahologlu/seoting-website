@@ -10,6 +10,7 @@ Bu proje, İstanbul merkezli SEOTING Dijital Pazarlama Ajansı için tasarlanmı
 - ⚡ **Yüksek Performans**: Next.js 14 ile optimize edilmiş
 - 🎨 **Interaktif Elementler**: Particle efektleri ve hover animasyonları
 - 🌟 **SEO Optimize**: Meta tagları ve yapısal SEO
+- 🛠️ **Profesyonel Araçlar**: Google API entegrasyonları ile gerçek veri analizi
 
 ## Teknolojiler
 
@@ -38,18 +39,21 @@ npm run dev
 ```
 src/
 ├── app/
-│   ├── globals.css      # Global styles
-│   ├── layout.tsx       # Root layout
-│   └── page.tsx         # Ana sayfa
+│   ├── api/              # API routes
+│   │   ├── google-search/   # Google Search API
+│   │   ├── keyword-analysis/ # Keyword Analysis API
+│   │   ├── page-speed/      # Page Speed API
+│   │   └── send-email/      # Email API
+│   ├── [service-pages]/  # Service pages
+│   ├── [tool-pages]/     # SEO tool pages
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Ana sayfa
 └── components/
-    ├── Hero.tsx         # Hero section
-    ├── Services.tsx     # Hizmetler bölümü
-    ├── About.tsx        # Hakkımızda bölümü
-    ├── Portfolio.tsx    # Portföy bölümü
-    ├── Contact.tsx      # İletişim bölümü
-    ├── Navigation.tsx   # Navigasyon
-    ├── Footer.tsx       # Footer
-    └── ParticleBackground.tsx # Particle efektleri
+    ├── Hero.tsx          # Hero section
+    ├── Navigation.tsx    # Navigation with megamenu
+    ├── Footer.tsx        # Footer
+    └── ParticleBackground.tsx # Particle effects
 ```
 
 ## Özelleştirme

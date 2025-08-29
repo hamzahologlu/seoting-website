@@ -21,7 +21,6 @@ import {
   Lightbulb,
   Target,
   Globe,
-  Calculator,
   Monitor
 } from 'lucide-react';
 
