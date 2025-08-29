@@ -106,7 +106,7 @@ const testimonials = [
     company: "BeautyWorld",
     comment: "Ürün çekimleri mükemmeldi. E-ticaret satışlarımız çekimlerden sonra ikiye katlandı.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b1e3?w=150&h=150&fit=crop&crop=face"
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
   },
   {
     name: "Can Demir",
