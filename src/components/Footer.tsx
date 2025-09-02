@@ -87,7 +87,7 @@ export default function Footer() {
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin size={18} className="text-primary-400 flex-shrink-0" />
-                <span className="text-sm">Maslak Mah., Büyükdere Cad. No:123, Şişli/İstanbul</span>
+                <span className="text-sm">İkitelli Organize Sanayi Bölgesi, Giyim Sanatkarları Sitesi, 2.Ada A Blok No:109, Başakşehir / İstanbul</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone size={18} className="text-primary-400 flex-shrink-0" />

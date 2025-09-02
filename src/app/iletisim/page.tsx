@@ -32,7 +32,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Adresimiz",
-    details: ["Maslak Mahallesi", "Büyükdere Cad. No:123", "Şişli / İstanbul", "Türkiye"],
+    details: ["İkitelli Organize Sanayi Bölgesi", "Giyim Sanatkarları Sitesi", "2.Ada A Blok No:109", "Başakşehir / İstanbul", "Türkiye"],
     color: "from-red-500 to-red-600"
   },
   {

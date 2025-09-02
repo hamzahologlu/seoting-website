@@ -21,8 +21,8 @@ export default function StructuredData({ type = 'organization', pageData }: Orga
     "description": "İstanbul merkezli SEOTING, dijital pazarlama ve ürün çekim hizmetleri sunan önde gelen ajansıdır. Türkiye'nin en büyük firmalarına danışmanlık hizmeti veriyoruz.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Maslak Mahallesi, Büyükdere Cad. No:123",
-      "addressLocality": "Şişli",
+      "streetAddress": "İkitelli Organize Sanayi Bölgesi, Giyim Sanatkarları Sitesi, 2.Ada A Blok No:109",
+      "addressLocality": "Başakşehir",
       "addressRegion": "İstanbul",
       "addressCountry": "TR"
     },
@@ -45,8 +45,8 @@ export default function StructuredData({ type = 'organization', pageData }: Orga
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": "41.0082",
-        "longitude": "28.9784"
+        "latitude": "41.0719",
+        "longitude": "28.7792"
       },
       "geoRadius": "50000"
     }
@@ -60,16 +60,16 @@ export default function StructuredData({ type = 'organization', pageData }: Orga
     "description": "İstanbul'un önde gelen dijital pazarlama ajansı. SEO, SEM, sosyal medya, ürün fotoğrafçılığı ve marka danışmanlığı hizmetleri.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Maslak Mahallesi, Büyükdere Cad. No:123",
-      "addressLocality": "Şişli",
+      "streetAddress": "İkitelli Organize Sanayi Bölgesi, Giyim Sanatkarları Sitesi, 2.Ada A Blok No:109",
+      "addressLocality": "Başakşehir",
       "addressRegion": "İstanbul",
-      "postalCode": "34398",
+      "postalCode": "34490",
       "addressCountry": "TR"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "41.0082",
-      "longitude": "28.9784"
+      "latitude": "41.0719",
+      "longitude": "28.7792"
     },
     "telephone": "+90-544-251-90-82",
     "openingHours": [
