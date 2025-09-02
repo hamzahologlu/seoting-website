@@ -26,11 +26,10 @@ import {
 
 const navItems: Array<{ name: string; href: string; hasDropdown?: boolean }> = [
   { name: 'Ana Sayfa', href: '/' },
-  { name: 'Hizmetler', href: '/hizmetlerimiz', hasDropdown: true },
-  { name: 'Paketler', href: '/paketler' },
-  { name: 'Araçlar', href: '/araclar', hasDropdown: true },
-  { name: 'Blog', href: '/blog' },
   { name: 'Hakkımızda', href: '/hakkimizda' },
+  { name: 'Hizmetlerimiz', href: '/hizmetlerimiz', hasDropdown: true },
+  { name: 'Araçlar', href: '/araclar', hasDropdown: true },
+  { name: 'Paketler', href: '/paketler' },
   { name: 'İletişim', href: '/iletisim' },
 ];
 
@@ -269,14 +268,14 @@ export default function Navigation() {
                 {item.hasDropdown ? (
                   <motion.button
                     onMouseEnter={() => {
-                      if (item.name === 'Hizmetler') {
+                      if (item.name === 'Hizmetlerimiz') {
                         handleServicesMouseEnter();
                       } else if (item.name === 'Araçlar') {
                         handleToolsMouseEnter();
                       }
                     }}
                     onMouseLeave={() => {
-                      if (item.name === 'Hizmetler') {
+                      if (item.name === 'Hizmetlerimiz') {
                         handleServicesMouseLeave();
                       } else if (item.name === 'Araçlar') {
                         handleToolsMouseLeave();
@@ -294,7 +293,7 @@ export default function Navigation() {
                     <ChevronDown 
                       size={16} 
                       className={`ml-1 transition-transform duration-300 ${
-                        (item.name === 'Hizmetler' && showMegaMenu) || 
+                        (item.name === 'Hizmetlerimiz' && showMegaMenu) || 
                         (item.name === 'Araçlar' && showToolsMegaMenu) ? 'rotate-180' : ''
                       }`} 
                     />
@@ -316,7 +315,7 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Contact Info & CTA */}
+          {/* Contact Info, Blog & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-4 text-sm text-gray-400">
               <div className="flex items-center space-x-1">
@@ -328,6 +327,17 @@ export default function Navigation() {
                 <span>info@seoting.com</span>
               </div>
             </div>
+            
+            {/* Blog Button */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => handleNavigation('/blog')}
+              className="px-4 py-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 hover:border-orange-500/50 rounded-full font-medium text-orange-300 hover:text-white transition-all duration-300 backdrop-blur-sm text-sm flex items-center gap-1"
+            >
+              📝 BLOG
+            </motion.button>
+            
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -514,15 +524,15 @@ export default function Navigation() {
                 {item.hasDropdown ? (
                   <div className="space-y-2">
                     <motion.button
-                      onClick={() => {
-                        if (item.name === 'Hizmetler') {
-                          setShowMobileMegaMenu(!showMobileMegaMenu);
-                          setShowMobileToolsMegaMenu(false);
-                        } else if (item.name === 'Araçlar') {
-                          setShowMobileToolsMegaMenu(!showMobileToolsMegaMenu);
-                          setShowMobileMegaMenu(false);
-                        }
-                      }}
+                                          onClick={() => {
+                      if (item.name === 'Hizmetlerimiz') {
+                        setShowMobileMegaMenu(!showMobileMegaMenu);
+                        setShowMobileToolsMegaMenu(false);
+                      } else if (item.name === 'Araçlar') {
+                        setShowMobileToolsMegaMenu(!showMobileToolsMegaMenu);
+                        setShowMobileMegaMenu(false);
+                      }
+                    }}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ 
                         opacity: isOpen ? 1 : 0, 
@@ -535,14 +545,14 @@ export default function Navigation() {
                       <ChevronDown 
                         size={16} 
                         className={`transition-transform duration-300 ${
-                          (item.name === 'Hizmetler' && showMobileMegaMenu) || 
+                          (item.name === 'Hizmetlerimiz' && showMobileMegaMenu) || 
                           (item.name === 'Araçlar' && showMobileToolsMegaMenu) ? 'rotate-180' : ''
                         }`} 
                       />
                     </motion.button>
                     
                     {/* Mobile Services Mega Menu */}
-                    {item.name === 'Hizmetler' && (
+                    {item.name === 'Hizmetlerimiz' && (
                       <motion.div
                         initial={false}
                         animate={{
@@ -681,6 +691,17 @@ export default function Navigation() {
                   <span>info@seoting.com</span>
                 </div>
               </div>
+              
+              {/* Mobile Blog Button */}
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => handleNavigation('/blog')}
+                className="w-full px-6 py-3 mb-3 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 rounded-full font-medium text-orange-300 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                📝 BLOG
+              </motion.button>
+              
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
