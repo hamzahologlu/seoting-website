@@ -315,7 +315,7 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Contact Info, Blog & CTA */}
+          {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-4 text-sm text-gray-400">
               <div className="flex items-center space-x-1">
@@ -328,23 +328,13 @@ export default function Navigation() {
               </div>
             </div>
             
-            {/* Blog Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleNavigation('/blog')}
-              className="px-4 py-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 hover:border-orange-500/50 rounded-full font-medium text-orange-300 hover:text-white transition-all duration-300 backdrop-blur-sm text-sm flex items-center gap-1"
-            >
-              📝 BLOG
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => handleNavigation('/iletisim')}
               className="px-6 py-2 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 rounded-full font-semibold text-white transition-all duration-300 text-sm neon-glow"
             >
-              Proje Başlat
+              📝 BLOG
             </motion.button>
           </div>
 
@@ -692,23 +682,13 @@ export default function Navigation() {
                 </div>
               </div>
               
-              {/* Mobile Blog Button */}
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleNavigation('/blog')}
-                className="w-full px-6 py-3 mb-3 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 rounded-full font-medium text-orange-300 transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                📝 BLOG
-              </motion.button>
-              
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => handleNavigation('/iletisim')}
                 className="w-full px-6 py-3 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 rounded-full font-semibold text-white transition-all duration-300"
               >
-                Proje Başlat
+                📝 BLOG
               </motion.button>
             </div>
           </div>
