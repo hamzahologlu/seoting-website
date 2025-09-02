@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: "SEOTING - Dijital Pazarlama Ajansı | İstanbul",
     template: "%s | SEOTING"
   },
-  description: "İstanbul merkezli SEOTING, dijital pazarlama ve ürün çekim hizmetleri sunan önde gelen ajansıdır. SEO, SEM, sosyal medya yönetimi, ürün fotoğrafçılığı ve marka danışmanlığı ile Türkiye'nin en büyük firmalarına hizmet veriyoruz.",
+  description: "SEOTING, İstanbul'un lider dijital pazarlama ajansıdır. Fortune 500 şirketleri ve büyük markalara SEO, Google Ads, sosyal medya yönetimi, ürün fotoğrafçılığı ve stratejik marka danışmanlığı hizmetleri sunarak ölçülebilir büyüme sağlıyoruz.",
   keywords: [
     "dijital pazarlama ajansı",
     "SEO hizmetleri İstanbul", 
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "SEOTING - İstanbul'un Önde Gelen Dijital Pazarlama Ajansı",
-    description: "SEO, SEM, sosyal medya yönetimi, ürün fotoğrafçılığı ve marka danışmanlığı hizmetleri. 5+ yıl deneyim, 150+ mutlu müşteri. Projenizi başlatın!",
+    description: "Fortune 500 şirketleri ve büyük markalara dijital pazarlama hizmetleri sunan lider ajans. SEO, Google Ads, sosyal medya yönetimi ve ürün fotoğrafçılığı ile ölçülebilir sonuçlar.",
     type: "website",
     locale: "tr_TR",
     url: "https://seoting.com",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "SEOTING - İstanbul'un Önde Gelen Dijital Pazarlama Ajansı",
-    description: "SEO, SEM, sosyal medya yönetimi, ürün fotoğrafçılığı ve marka danışmanlığı hizmetleri. 5+ yıl deneyim, 150+ mutlu müşteri.",
+    description: "Fortune 500 şirketleri ve büyük markalara dijital pazarlama hizmetleri sunan lider ajans. SEO, Google Ads ve sosyal medya yönetimi ile ölçülebilir sonuçlar.",
     creator: '@seoting',
     images: ['/favicon.svg'],
   },
