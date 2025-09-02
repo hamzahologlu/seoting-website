@@ -26,7 +26,10 @@ import {
   Video,
   Palette,
   Monitor,
-  Gauge
+  Gauge,
+  Rocket,
+  Crown,
+  Check
 } from 'lucide-react';
 
 const quickServices = [
@@ -134,6 +137,66 @@ const allServices = [
   { icon: Palette, name: "Grafik Tasarım", description: "Yaratıcı tasarım çözümleri" },
   { icon: Target, name: "Strateji", description: "Dijital pazarlama planlaması" },
   { icon: Globe, name: "Web Tasarım", description: "Modern ve responsive siteler" }
+];
+
+const packages = [
+  {
+    id: "startup",
+    name: "Startup Paketi",
+    subtitle: "Yeni başlayanlar için",
+    price: "25.000₺",
+    popular: false,
+    color: "from-blue-500 to-indigo-500",
+    icon: Rocket,
+    description: "Dijital dünyaya adım atan işletmeler için temel dijital pazarlama çözümleri",
+    features: [
+      "Temel Web Sitesi Tasarımı",
+      "Google My Business Optimizasyonu", 
+      "Sosyal Medya Hesap Kurulumu",
+      "Temel SEO Çalışması",
+      "Aylık 10 Sosyal Medya Postu"
+    ],
+    timeline: "2-3 Hafta",
+    href: "/startup-paketi"
+  },
+  {
+    id: "growth",
+    name: "Büyüme Paketi",
+    subtitle: "Büyüyen işletmeler için",
+    price: "45.000₺",
+    popular: true,
+    color: "from-green-500 to-emerald-500",
+    icon: TrendingUp,
+    description: "Büyüme hedefindeki işletmeler için kapsamlı dijital pazarlama stratejileri",
+    features: [
+      "Profesyonel Web Sitesi",
+      "Gelişmiş SEO Optimizasyonu",
+      "Google Ads Kampanya Yönetimi",
+      "Sosyal Medya Pazarlaması",
+      "İçerik Pazarlaması"
+    ],
+    timeline: "3-4 Hafta",
+    href: "/buyume-paketi"
+  },
+  {
+    id: "enterprise",
+    name: "Kurumsal Paket",
+    subtitle: "Büyük işletmeler için",
+    price: "60.000₺",
+    popular: false,
+    color: "from-purple-500 to-pink-500",
+    icon: Crown,
+    description: "Kurumsal düzeyde kapsamlı dijital transformation çözümleri",
+    features: [
+      "Kurumsal Web Platformu",
+      "360° Dijital Pazarlama",
+      "CRM Entegrasyonu",
+      "Özel Analiz Dashboard'u",
+      "Dedicated Account Manager"
+    ],
+    timeline: "4-6 Hafta",
+    href: "/kurumsal-paket"
+  }
 ];
 
 export default function Home() {
@@ -651,6 +714,127 @@ export default function Home() {
             >
               <Monitor className="w-5 h-5" />
               Tüm Araçları Keşfet
+              <ArrowRight className="w-5 h-5" />
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Packages Section */}
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-0 w-96 h-96 bg-green-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-green-500/20 to-purple-500/20 rounded-full border border-green-500/30 text-sm font-medium text-green-300 backdrop-blur-sm mb-6">
+              💼 Paketlerimiz
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black font-display mb-6">
+              <span className="gradient-text">Size Özel Çözümler</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              İşletmenizin büyüklüğüne ve ihtiyaçlarına göre özel olarak tasarlanmış dijital pazarlama paketleri
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {packages.map((pkg, index) => (
+              <motion.div
+                key={pkg.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="group relative"
+              >
+                <motion.a
+                  href={pkg.href}
+                  whileHover={{ y: -10, boxShadow: "0 25px 50px rgba(0,0,0,0.3)" }}
+                  className="block h-full"
+                >
+                  <div className={`glass rounded-3xl p-8 h-full border ${pkg.popular ? 'border-green-500/30 ring-2 ring-green-500/20' : 'border-white/10'} hover:border-white/20 transition-all duration-500 relative overflow-hidden`}>
+                    {pkg.popular && (
+                      <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        ⭐ Popüler
+                      </div>
+                    )}
+                    
+                    <div className={`absolute inset-0 bg-gradient-to-br ${pkg.color} opacity-5 group-hover:opacity-10 transition-opacity duration-500`} />
+                    
+                    <div className="relative z-10">
+                      <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${pkg.color} bg-opacity-20 backdrop-blur-sm border border-white/10 mb-6`}>
+                        <pkg.icon className="w-8 h-8 text-white" />
+                      </div>
+                      
+                      <div className="mb-6">
+                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:gradient-text transition-all duration-300">
+                          {pkg.name}
+                        </h3>
+                        <p className="text-gray-400 text-sm mb-4">{pkg.subtitle}</p>
+                        <div className="flex items-baseline gap-2 mb-4">
+                          <span className="text-3xl font-bold gradient-text">{pkg.price}</span>
+                          <span className="text-gray-400 text-sm">/ proje</span>
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-300 mb-6 leading-relaxed">
+                        {pkg.description}
+                      </p>
+
+                      <div className="space-y-3 mb-8">
+                        {pkg.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center gap-3">
+                            <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                            <span className="text-gray-300 text-sm">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="space-y-3 mb-8">
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-gray-400">Teslim Süresi:</span>
+                          <span className="text-white font-medium">{pkg.timeline}</span>
+                        </div>
+                      </div>
+
+                      <motion.div
+                        className="flex items-center gap-2 text-white font-semibold group-hover:gap-4 transition-all duration-300"
+                        whileHover={{ x: 5 }}
+                      >
+                        <span>Detayları İncele</span>
+                        <ArrowRight className="w-5 h-5" />
+                      </motion.div>
+                    </div>
+                  </div>
+                </motion.a>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <motion.a
+              href="/paketler"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-purple-600 hover:from-green-700 hover:to-purple-700 rounded-full font-semibold text-white transition-all duration-300 gap-2"
+            >
+              <Crown className="w-5 h-5" />
+              Tüm Paketleri Karşılaştır
               <ArrowRight className="w-5 h-5" />
             </motion.a>
           </motion.div>
