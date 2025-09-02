@@ -22,7 +22,7 @@ const nextConfig = {
 
   // Experimental features for better SEO
   experimental: {
-    optimizeCss: true,
+    // optimizeCss: true, // Geçici olarak kapatıldı - build hatası
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
 
