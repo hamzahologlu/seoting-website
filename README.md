@@ -27,12 +27,32 @@ Bu proje, İstanbul merkezli SEOTING Dijital Pazarlama Ajansı için tasarlanmı
 npm install
 ```
 
-2. Geliştirme sunucusunu başlatın:
+2. Environment variables dosyasını oluşturun:
+```bash
+cp .env.example .env.local
+```
+
+3. `.env.local` dosyasını doldurun:
+```env
+# Google Analytics
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+
+# Google Search Console
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your_verification_code_here
+
+# Email Configuration
+SMTP_HOST=your_smtp_host
+SMTP_PORT=587
+SMTP_USER=your_email@domain.com
+SMTP_PASS=your_email_password
+```
+
+4. Geliştirme sunucusunu başlatın:
 ```bash
 npm run dev
 ```
 
-3. Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresini açın.
+5. Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresini açın.
 
 ## Proje Yapısı
 
@@ -53,8 +73,32 @@ src/
     ├── Hero.tsx          # Hero section
     ├── Navigation.tsx    # Navigation with megamenu
     ├── Footer.tsx        # Footer
+    ├── GoogleAnalytics.tsx # Google Analytics component
     └── ParticleBackground.tsx # Particle effects
 ```
+
+## Google Analytics & Search Console Kurulumu
+
+### Google Analytics
+
+1. [Google Analytics](https://analytics.google.com/) hesabınızda yeni bir property oluşturun
+2. Measurement ID'yi (G-XXXXXXXXXX formatında) kopyalayın
+3. `.env.local` dosyasında `NEXT_PUBLIC_GA_MEASUREMENT_ID` değişkenini güncelleyin
+
+### Google Search Console
+
+1. [Google Search Console](https://search.google.com/search-console/) hesabınızda site ekleyin
+2. HTML tag yöntemi ile doğrulama yapın
+3. Meta tag'daki content değerini kopyalayın
+4. `.env.local` dosyasında `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` değişkenini güncelleyin
+
+### Otomatik Entegrasyon
+
+Bu kurulum tamamlandıktan sonra:
+- ✅ Google Analytics otomatik olarak tüm sayfa görüntülemelerini takip edecek
+- ✅ Search Console meta tag'i tüm sayfalara otomatik olarak eklenecek
+- ✅ Environment variables ile güvenli yapılandırma
+- ✅ Production ve development ortamları için ayrı konfigurasyon
 
 ## Özelleştirme
 

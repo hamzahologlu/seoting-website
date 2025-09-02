@@ -3,6 +3,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
+import StructuredData from '@/components/StructuredData';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
@@ -138,6 +139,7 @@ const allServices = [
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <StructuredData type="localbusiness" />
       <Navigation />
       
       <section id="hero">
@@ -162,9 +164,9 @@ export default function Home() {
             <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-500/30 text-sm font-medium text-blue-300 backdrop-blur-sm mb-6">
               🚀 Hakkımızda
             </span>
-            <h2 className="text-4xl md:text-5xl font-black font-display mb-6">
+            <h1 className="text-4xl md:text-5xl font-black font-display mb-6">
               <span className="gradient-text">Dijital Dünyada Fark Yaratan Ekip</span>
-            </h2>
+            </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               İstanbul merkezli SEOTING olarak, 2019'dan beri dijital pazarlama ve görsel çözümler alanında 
               Türkiye'nin önde gelen firmalarına hizmet veriyoruz. Yaratıcılık ve teknoloji expertise'imizi 
