@@ -29,7 +29,10 @@ import {
   Gauge,
   Rocket,
   Crown,
-  Check
+  Check,
+  BookOpen,
+  Eye,
+  Calendar
 } from 'lucide-react';
 
 const quickServices = [
@@ -196,6 +199,42 @@ const packages = [
     ],
     timeline: "4-6 Hafta",
     href: "/kurumsal-paket"
+  }
+];
+
+const featuredBlogPosts = [
+  {
+    id: 1,
+    title: "2024'te E-ticaret Patlaması: 15 Dakikada Milyonluk Satış Sırrı",
+    excerpt: "Bir gecede viral olan e-ticaret mağazalarının 7 gizli stratejisi.",
+    category: "E-ticaret",
+    readTime: "8 dakika",
+    publishDate: "15 Aralık 2024",
+    views: 12547,
+    slug: "eticaret-patlamasi-2024-milyonluk-satis-sirri",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop"
+  },
+  {
+    id: 2,
+    title: "Instagram'da 1 Gecede 50K Takipçi Kazanan Viral Loop Formülü",
+    excerpt: "Sosyal medya algoritmasını hackleyen 9 teknik.",
+    category: "Sosyal Medya",
+    readTime: "6 dakika",
+    publishDate: "12 Aralık 2024",
+    views: 8923,
+    slug: "instagram-viral-loop-formulu-50k-takipci",
+    image: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=400&h=200&fit=crop"
+  },
+  {
+    id: 3,
+    title: "ChatGPT'nin %95'inin Bilmediği 27 Gizli Komut",
+    excerpt: "OpenAI belgelerinde yazmayan uzman komutları.",
+    category: "AI & Teknoloji",
+    readTime: "12 dakika",
+    publishDate: "5 Aralık 2024",
+    views: 22156,
+    slug: "chatgpt-gizli-komutlar-icerik-uretimi",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop"
   }
 ];
 
@@ -835,6 +874,120 @@ export default function Home() {
             >
               <Crown className="w-5 h-5" />
               Tüm Paketleri Karşılaştır
+              <ArrowRight className="w-5 h-5" />
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-24 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full border border-orange-500/30 text-sm font-medium text-orange-300 backdrop-blur-sm mb-6">
+              📝 SEOTING Blog
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black font-display mb-6">
+              <span className="gradient-text">Viral İçerikler</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Dijital pazarlama dünyasının en güncel trendleri ve tıklanma rekorları kıran stratejiler
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {featuredBlogPosts.map((post, index) => (
+              <motion.article
+                key={post.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <motion.a
+                  href={`/blog/${post.slug}`}
+                  whileHover={{ y: -10, boxShadow: "0 25px 50px rgba(0,0,0,0.3)" }}
+                  className="block h-full"
+                >
+                  <div className="glass rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 h-full">
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        🔥 Viral
+                      </div>
+                      <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-white px-2 py-1 rounded-lg text-xs">
+                        {post.category}
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:gradient-text transition-all duration-300 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      
+                      <p className="text-gray-300 mb-4 line-clamp-2">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-1">
+                            <Eye className="w-4 h-4" />
+                            <span>{(post.views / 1000).toFixed(1)}K</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock className="w-4 h-4" />
+                            <span>{post.readTime}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-1 text-xs text-gray-400">
+                          <Calendar className="w-3 h-3" />
+                          <span>{post.publishDate}</span>
+                        </div>
+                        
+                        <ArrowRight className="w-5 h-5 text-orange-400 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
+                  </div>
+                </motion.a>
+              </motion.article>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <motion.a
+              href="/blog"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 rounded-full font-semibold text-white transition-all duration-300 gap-2"
+            >
+              <BookOpen className="w-5 h-5" />
+              Tüm Blog Yazılarını Keşfet
               <ArrowRight className="w-5 h-5" />
             </motion.a>
           </motion.div>

@@ -29,6 +29,7 @@ const navItems: Array<{ name: string; href: string; hasDropdown?: boolean }> = [
   { name: 'Hizmetler', href: '/hizmetlerimiz', hasDropdown: true },
   { name: 'Paketler', href: '/paketler' },
   { name: 'Araçlar', href: '/araclar', hasDropdown: true },
+  { name: 'Blog', href: '/blog' },
   { name: 'Hakkımızda', href: '/hakkimizda' },
   { name: 'İletişim', href: '/iletisim' },
 ];

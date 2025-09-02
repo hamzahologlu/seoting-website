@@ -10,7 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/hizmetlerimiz',
     '/iletisim',
     '/araclar',
-    '/paketler'
+    '/paketler',
+    '/blog'
   ]
 
   // Hizmet sayfaları
