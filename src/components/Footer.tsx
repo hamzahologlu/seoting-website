@@ -110,6 +110,7 @@ export default function Footer() {
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className={`p-2 bg-white/5 rounded-lg text-gray-400 ${social.color} transition-all duration-300 hover:bg-white/10`}
+                  aria-label={`${social.name} sayfamızı ziyaret edin`}
                 >
                   <social.icon size={20} />
                 </motion.a>
@@ -220,6 +221,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="p-2 bg-gradient-to-r from-primary-600 to-accent-600 rounded-lg text-white hover:shadow-lg transition-all duration-300"
+                aria-label="Sayfanın başına dön"
               >
                 <ArrowUp size={16} />
               </motion.button>
