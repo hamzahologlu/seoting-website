@@ -3,6 +3,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { 
   Calendar,
   Clock,
@@ -12,7 +13,6 @@ import {
   Eye,
   ThumbsUp,
   Share2,
-  Search,
   Tag,
   BookOpen,
   Star,
@@ -155,6 +155,11 @@ const blogPosts = [
 const categories = ["Tümü", "E-ticaret", "SEO", "Sosyal Medya", "AI & Teknoloji", "İçerik Pazarlama", "Influencer Marketing"];
 
 export default function BlogPage() {
+  const [selectedCategory, setSelectedCategory] = useState("Tümü");
+  
+  const filteredPosts = selectedCategory === "Tümü" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
   return (
     <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Navigation />
@@ -185,30 +190,23 @@ export default function BlogPage() {
             </p>
           </motion.div>
 
-          {/* Search and Categories */}
+          {/* Categories */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-4xl mx-auto mb-16"
           >
-            <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                <input
-                  type="text"
-                  placeholder="Blog yazılarında ara..."
-                  className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-primary-500 focus:outline-none transition-colors"
-                />
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {categories.map((category, index) => (
+            <div className="flex justify-center">
+              <div className="flex flex-wrap gap-2 justify-center">
+                {categories.map((category) => (
                   <motion.button
                     key={category}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => setSelectedCategory(category)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                      index === 0
+                      selectedCategory === category
                         ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white'
                         : 'bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white'
                     }`}
@@ -240,7 +238,7 @@ export default function BlogPage() {
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-8 mb-16">
-            {blogPosts.filter(post => post.featured).slice(0, 4).map((post, index) => (
+            {filteredPosts.filter(post => post.featured).slice(0, 4).map((post, index) => (
               <motion.article
                 key={post.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -329,8 +327,9 @@ export default function BlogPage() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
+          {filteredPosts.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post, index) => (
               <motion.article
                 key={post.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -389,8 +388,27 @@ export default function BlogPage() {
                   </div>
                 </motion.a>
               </motion.article>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16">
+              <div className="w-20 h-20 mx-auto mb-6 bg-white/5 rounded-full flex items-center justify-center">
+                <BookOpen className="w-8 h-8 text-gray-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Bu kategoride henüz yazı yok</h3>
+              <p className="text-gray-400 mb-6">
+                {selectedCategory} kategorisinde henüz blog yazısı bulunmuyor. Diğer kategorileri keşfedin!
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setSelectedCategory("Tümü")}
+                className="px-6 py-3 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 rounded-full font-semibold text-white transition-all duration-300"
+              >
+                Tüm Yazıları Gör
+              </motion.button>
+            </div>
+          )}
         </div>
       </section>
 
