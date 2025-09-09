@@ -149,10 +149,52 @@ const blogPosts = [
     likes: 1856,
     featured: true,
     tags: ["influencer", "kazanç", "platform", "creator", "marketing"]
+  },
+  {
+    id: 7,
+    title: "İstanbul Dijital Pazarlama Trendleri 2024: Başakşehir'den Tüm Türkiye'ye",
+    slug: "istanbul-dijital-pazarlama-trendleri-2024",
+    excerpt: "İstanbul'un dijital pazarlama dünyasındaki en güncel trendleri, Başakşehir merkezli SEOTING uzmanları analiz ediyor. 2024'te İstanbul işletmelerini bekleyen fırsatlar ve tehditler.",
+    content: `
+    <p>İstanbul, Türkiye'nin dijital pazarlama başkenti olarak 2024'te de liderliğini sürdürüyor. Başakşehir'den tüm Türkiye'ye yayılan trendleri keşfedin.</p>
+    
+    <h2>İstanbul'un Dijital Pazarlama Haritası</h2>
+    <p>İstanbul, 15 milyon nüfusu ve dinamik ekonomisi ile Türkiye'nin dijital pazarlama merkezi konumunda...</p>
+    `,
+    category: "İstanbul Dijital Pazarlama",
+    readTime: "12 dakika",
+    publishDate: "20 Aralık 2024",
+    author: "SEOTING İstanbul Ekibi",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop",
+    views: 1847,
+    likes: 156,
+    featured: true,
+    tags: ["İstanbul", "dijital pazarlama", "trendler", "2024", "Başakşehir", "SEO", "sosyal medya"]
+  },
+  {
+    id: 8,
+    title: "İstanbul İşletmeleri İçin Kapsamlı SEO Rehberi: 39 İlçede 1. Sıraya Çıkma Stratejisi",
+    slug: "istanbul-isletmeleri-icin-seo-rehberi",
+    excerpt: "İstanbul'daki işletmenizi Google'da 1. sıraya çıkarmak için gereken tüm SEO tekniklerini öğrenin. Başakşehir'den Beşiktaş'a, Kadıköy'den Şişli'ye tüm İstanbul ilçeleri için özel stratejiler.",
+    content: `
+    <p>İstanbul, 15 milyon nüfusu ve dinamik ekonomisi ile Türkiye'nin en rekabetçi pazarlarından biri. İşletmenizi bu büyük pazarda öne çıkarmak için doğru SEO stratejileri şart.</p>
+    
+    <h2>İstanbul SEO'nun Önemi</h2>
+    <p>İstanbul'da günlük 45 milyon Google araması yapılıyor. Bu aramaların %70'i yerel işletmelerle ilgili...</p>
+    `,
+    category: "İstanbul SEO",
+    readTime: "15 dakika",
+    publishDate: "22 Aralık 2024",
+    author: "SEOTING SEO Uzmanları",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+    views: 2156,
+    likes: 189,
+    featured: true,
+    tags: ["İstanbul SEO", "yerel SEO", "Google My Business", "anahtar kelime", "İstanbul işletmeleri", "SEO rehberi"]
   }
 ];
 
-const categories = ["Tümü", "E-ticaret", "SEO", "Sosyal Medya", "AI & Teknoloji", "İçerik Pazarlama", "Influencer Marketing"];
+const categories = ["Tümü", "E-ticaret", "SEO", "Sosyal Medya", "AI & Teknoloji", "İçerik Pazarlama", "Influencer Marketing", "İstanbul Dijital Pazarlama", "İstanbul SEO"];
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
