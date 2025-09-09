@@ -23,7 +23,8 @@ import {
   FileText,
   Smartphone,
   Share2,
-  Mail
+  Mail,
+  Layers
 } from 'lucide-react';
 
 const toolCategories = [

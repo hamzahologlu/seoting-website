@@ -21,7 +21,8 @@ import {
   Lightbulb,
   Target,
   Globe,
-  Monitor
+  Monitor,
+  Layers
 } from 'lucide-react';
 
 const navItems: Array<{ name: string; href: string; hasDropdown?: boolean }> = [
