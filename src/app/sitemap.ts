@@ -11,7 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/iletisim',
     '/araclar',
     '/paketler',
-    '/blog'
+    '/blog',
+    '/istanbul-dijital-pazarlama'
   ]
 
   // Hizmet sayfaları

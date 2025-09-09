@@ -18,6 +18,7 @@ import {
   Zap,
   Shield,
   Clock,
+  MapPin,
   Heart,
   Lightbulb,
   BarChart3,
@@ -362,6 +363,127 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* İstanbul Odaklı Bölüm */}
+      <section className="py-24 bg-gradient-to-br from-blue-900/20 via-gray-900 to-purple-900/20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-500/30 text-sm font-medium text-blue-300 backdrop-blur-sm mb-6">
+              🏆 İstanbul'un #1 Dijital Pazarlama Ajansı
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black font-display mb-6">
+              <span className="gradient-text">İstanbul'da Dijital Pazarlama Lideri</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Başakşehir merkezli SEOTING olarak, İstanbul'un 39 ilçesinde 500+ mutlu müşteriye hizmet veriyoruz. 
+              İstanbul'un dinamik pazarında markanızı zirveye taşıyacak uzman ekibimizle tanışın.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="glass rounded-3xl p-8 border border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-6">İstanbul'da Neden SEOTING?</h3>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl border border-white/10">
+                      <MapPin className="w-6 h-6 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Başakşehir Merkez</h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        İkitelli Organize Sanayi Bölgesi'nde stratejik konumumuzla İstanbul'un her bölgesine hızlı ulaşım
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl border border-white/10">
+                      <Users className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">500+ Mutlu Müşteri</h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        İstanbul'un farklı bölgelerinden müşterilerimizin %98'i memnuniyet oranı
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl border border-white/10">
+                      <Award className="w-6 h-6 text-yellow-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">5 Yıllık Deneyim</h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        İstanbul pazarında 5 yıllık deneyimimizle yerel ve ulusal projelerde başarı
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="glass rounded-3xl p-8 border border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-6">İstanbul'a Özel Hizmetler</h3>
+                
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+                    <div className="text-2xl font-bold text-blue-400 mb-1">39</div>
+                    <div className="text-sm text-gray-300">İlçe Kapsamı</div>
+                  </div>
+                  <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+                    <div className="text-2xl font-bold text-green-400 mb-1">24/7</div>
+                    <div className="text-sm text-gray-300">Destek</div>
+                  </div>
+                  <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+                    <div className="text-2xl font-bold text-purple-400 mb-1">%300</div>
+                    <div className="text-sm text-gray-300">Ortalama ROI</div>
+                  </div>
+                  <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+                    <div className="text-2xl font-bold text-yellow-400 mb-1">1. Sıra</div>
+                    <div className="text-sm text-gray-300">Hedef</div>
+                  </div>
+                </div>
+
+                <motion.a
+                  href="/istanbul-dijital-pazarlama"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full font-semibold text-white transition-all duration-300 gap-2"
+                >
+                  <MapPin className="w-5 h-5" />
+                  İstanbul Hizmetlerimizi Keşfedin
+                  <ArrowRight className="w-5 h-5" />
+                </motion.a>
               </div>
             </motion.div>
           </div>
