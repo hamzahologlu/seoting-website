@@ -96,6 +96,7 @@ export default function RootLayout({
   return (
     <html lang="tr" className="scroll-smooth">
       <head>
+        <meta name="google-site-verification" content="K5ydRn5sas2bUnD3M_x0Zuk9cqCANsTlxZsJfMReZWU" />
         <StructuredData type="organization" />
       </head>
       <body className="antialiased">
