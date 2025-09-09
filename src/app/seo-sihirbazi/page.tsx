@@ -247,21 +247,21 @@ export default function SEODashboardPage() {
               className="mb-6"
             >
               <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-500/30 text-sm font-medium text-blue-300 backdrop-blur-sm">
-                🚀 Kapsamlı SEO Analizi
+                🎩 Sihirli SEO Analizi
               </span>
             </motion.div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                SEO Performance
+                SEO Sihirbazı
               </span>
               <br />
-              <span className="text-white">Dashboard</span>
+              <span className="text-white">✨</span>
             </h1>
             
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Sıralama + Hız analizi birleştiren kapsamlı SEO dashboard'u. 
-              Anahtar kelime performansınızı ve sayfa hızınızı tek yerde analiz edin.
+              Sihirli dokunuşlarla SEO performansınızı büyüleyin! 
+              Sıralama + Hız analizi birleştiren kapsamlı SEO sihirbazı.
             </p>
           </motion.div>
         </div>
@@ -336,7 +336,7 @@ export default function SEODashboardPage() {
                 ) : (
                   <>
                     <BarChart3 className="w-5 h-5" />
-                    Kapsamlı SEO Analizi Başlat
+                    Sihirli SEO Analizi Başlat
                   </>
                 )}
               </motion.button>

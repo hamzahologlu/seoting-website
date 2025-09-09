@@ -51,10 +51,10 @@ const toolCategories = [
       },
       {
         icon: BarChart3,
-        name: "SEO Performance Dashboard",
-        description: "Sıralama ve hız analizi birleştiren kapsamlı SEO dashboard'u. Tüm metrikleri tek yerde analiz edin",
-        features: ["Birleşik Analiz", "Anahtar Kelime Takibi", "Performans Metrikleri", "Rakip Analizi", "Akıllı Öneriler"],
-        href: "/seo-dashboard",
+        name: "SEO Sihirbazı",
+        description: "Sihirli dokunuşlarla SEO performansınızı büyüleyin! Sıralama ve hız analizi birleştiren kapsamlı SEO sihirbazı",
+        features: ["Sihirli Analiz", "Anahtar Kelime Takibi", "Performans Metrikleri", "Rakip Analizi", "Akıllı Öneriler"],
+        href: "/seo-sihirbazi",
         badge: "YENİ!",
         status: "new"
       },

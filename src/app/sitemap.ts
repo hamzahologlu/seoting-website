@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/google-sira-bulucu',
     '/anahtar-kelime-analizi',
     '/sayfa-hizi-testi',
-    '/seo-dashboard',
+    '/seo-sihirbazi',
     '/google-sira-bulucu/api-setup',
     '/anahtar-kelime-analizi/api-setup',
     '/anahtar-kelime-analizi/google-setup'
