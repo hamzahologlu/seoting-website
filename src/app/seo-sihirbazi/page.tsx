@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ReportGenerator from '@/components/ReportGenerator';
 import { 
   BarChart3, 
   TrendingUp, 
@@ -25,7 +26,9 @@ import {
   Gauge,
   Users,
   Award,
-  Lightbulb
+  Lightbulb,
+  Share2,
+  FileText
 } from 'lucide-react';
 
 interface SEOPerformanceData {
@@ -71,7 +74,7 @@ export default function SEODashboardPage() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [results, setResults] = useState<SEOPerformanceData | null>(null);
   const [analysisHistory, setAnalysisHistory] = useState<SEOPerformanceData[]>([]);
-  const [activeTab, setActiveTab] = useState<'overview' | 'keywords' | 'performance' | 'competitors' | 'recommendations'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'keywords' | 'performance' | 'competitors' | 'recommendations' | 'reports'>('overview');
 
   const handleAnalysis = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -413,7 +416,8 @@ export default function SEODashboardPage() {
                   { id: 'keywords', label: 'Anahtar Kelimeler', icon: Target },
                   { id: 'performance', label: 'Performans', icon: Zap },
                   { id: 'competitors', label: 'Rakipler', icon: Users },
-                  { id: 'recommendations', label: 'Öneriler', icon: Lightbulb }
+                  { id: 'recommendations', label: 'Öneriler', icon: Lightbulb },
+                  { id: 'reports', label: 'Raporlar', icon: FileText }
                 ].map((tab) => (
                   <button
                     key={tab.id}
@@ -677,6 +681,28 @@ export default function SEODashboardPage() {
                         </div>
                       </div>
                     ))}
+                  </div>
+                )}
+
+                {activeTab === 'reports' && (
+                  <div className="space-y-6">
+                    <h3 className="text-2xl font-bold text-white mb-6">Rapor Oluştur</h3>
+                    
+                    {results ? (
+                      <ReportGenerator 
+                        data={results}
+                        reportType="seo-analysis"
+                        onReportGenerated={(report) => {
+                          console.log('Rapor oluşturuldu:', report);
+                        }}
+                      />
+                    ) : (
+                      <div className="text-center py-12">
+                        <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                        <h4 className="text-xl font-semibold text-white mb-2">Rapor Oluşturmak İçin Analiz Yapın</h4>
+                        <p className="text-gray-400">Önce bir SEO analizi yaparak rapor oluşturabilirsiniz.</p>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
