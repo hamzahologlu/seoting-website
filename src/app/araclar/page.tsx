@@ -51,6 +51,15 @@ const toolCategories = [
       },
       {
         icon: BarChart3,
+        name: "SEO Performance Dashboard",
+        description: "Sıralama ve hız analizi birleştiren kapsamlı SEO dashboard'u. Tüm metrikleri tek yerde analiz edin",
+        features: ["Birleşik Analiz", "Anahtar Kelime Takibi", "Performans Metrikleri", "Rakip Analizi", "Akıllı Öneriler"],
+        href: "/seo-dashboard",
+        badge: "YENİ!",
+        status: "new"
+      },
+      {
+        icon: BarChart3,
         name: "SEO Skoru Hesaplama",
         description: "Web sitenizin teknik SEO performansını detaylı olarak analiz edin",
         features: ["Teknik SEO Analizi", "On-Page Optimizasyon", "Meta Tag Kontrolü", "Sayfa Hızı", "Mobil Uyumluluk"],
