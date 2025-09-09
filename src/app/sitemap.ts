@@ -43,6 +43,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/anahtar-kelime-analizi',
     '/sayfa-hizi-testi',
     '/seo-sihirbazi',
+    '/serp-analiz-araci',
+    '/toplu-site-analizi',
+    '/anahtar-kelime-izleme',
     '/google-sira-bulucu/api-setup',
     '/anahtar-kelime-analizi/api-setup',
     '/anahtar-kelime-analizi/google-setup'

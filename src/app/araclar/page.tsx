@@ -59,6 +59,24 @@ const toolCategories = [
         status: "active"
       },
       {
+        icon: Eye,
+        name: "SERP Analiz Aracı",
+        description: "Google arama sonuçlarının özelliklerini detaylı analiz edin. Featured Snippets, Local Pack, People Also Ask ve daha fazlasını keşfedin",
+        features: ["Featured Snippets", "Local Pack", "People Also Ask", "Görsel Sonuçlar", "Video Sonuçlar"],
+        href: "/serp-analiz-araci",
+        badge: "YENİ!",
+        status: "new"
+      },
+      {
+        icon: TrendingUp,
+        name: "Anahtar Kelime İzleme",
+        description: "Anahtar kelimelerinizin Google sıralamalarını otomatik takip edin. Sıralama değişimlerini anında bildirim alın ve SEO stratejinizi optimize edin",
+        features: ["Otomatik Takip", "Akıllı Bildirimler", "Trend Analizi", "Hedef Belirleme", "Detaylı Raporlar"],
+        href: "/anahtar-kelime-izleme",
+        badge: "YENİ!",
+        status: "new"
+      },
+      {
         icon: BarChart3,
         name: "SEO Skoru Hesaplama",
         description: "Web sitenizin teknik SEO performansını detaylı olarak analiz edin",
@@ -81,6 +99,15 @@ const toolCategories = [
         href: "/sayfa-hizi-testi",
         badge: "PageSpeed API",
         status: "active"
+      },
+      {
+        icon: Layers,
+        name: "Toplu Site Analizi",
+        description: "Birden fazla web sitesini aynı anda analiz edin. Performans, hız ve optimizasyon fırsatlarını toplu olarak değerlendirin",
+        features: ["Toplu Analiz", "Site Karşılaştırması", "Core Web Vitals", "Optimizasyon Fırsatları", "Detaylı Raporlar"],
+        href: "/toplu-site-analizi",
+        badge: "YENİ!",
+        status: "new"
       },
       {
         icon: Activity,

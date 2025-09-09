@@ -144,10 +144,28 @@ const toolCategories = [
         href: "/anahtar-kelime-analizi"
       },
       {
+        icon: Eye,
+        name: "SERP Analiz Aracı",
+        description: "Google arama sonuçları analizi",
+        href: "/serp-analiz-araci"
+      },
+      {
+        icon: TrendingUp,
+        name: "Anahtar Kelime İzleme",
+        description: "Otomatik sıralama takibi",
+        href: "/anahtar-kelime-izleme"
+      },
+      {
         icon: Monitor,
         name: "Sayfa Hızı Testi",
         description: "Site yükleme hızını test edin",
         href: "/sayfa-hizi-testi"
+      },
+      {
+        icon: Layers,
+        name: "Toplu Site Analizi",
+        description: "Birden fazla siteyi aynı anda analiz edin",
+        href: "/toplu-site-analizi"
       }
     ]
   }
