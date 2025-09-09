@@ -249,6 +249,154 @@ export default function Home() {
         <Hero />
       </section>
 
+      {/* SEO Sihirbazı Özel Bölüm */}
+      <section className="py-24 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full border border-purple-500/30 text-sm font-medium text-purple-300 backdrop-blur-sm mb-6">
+              🎩 YENİ! Sihirli SEO Aracı
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black font-display mb-6">
+              <span className="gradient-text">SEO Sihirbazı</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+              Sihirli dokunuşlarla SEO performansınızı büyüleyin! 
+              <span className="text-purple-400 font-semibold"> Sıralama + Hız analizi</span> birleştiren 
+              <span className="text-blue-400 font-semibold"> kapsamlı SEO sihirbazı</span> ile 
+              tüm metrikleri tek yerde analiz edin.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="glass rounded-3xl p-8 border border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-6">🎩 Sihirli Özellikler</h3>
+
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl border border-white/10">
+                      <BarChart3 className="w-6 h-6 text-purple-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Birleşik Analiz</h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Google Search API + Page Speed API ile sıralama ve hız analizi tek yerde
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl border border-white/10">
+                      <Target className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Anahtar Kelime Takibi</h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Tüm anahtar kelimelerinizi tek seferde kontrol edin ve sıralama değişimlerini izleyin
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl border border-white/10">
+                      <Zap className="w-6 h-6 text-yellow-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Performans Metrikleri</h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Core Web Vitals, hız skorları ve detaylı performans analizi
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-2xl border border-white/10">
+                      <Lightbulb className="w-6 h-6 text-pink-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Akıllı Öneriler</h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        AI destekli iyileştirme önerileri ve aksiyon planları
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="glass rounded-3xl p-8 border border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-6">✨ Neden SEO Sihirbazı?</h3>
+
+                <div className="space-y-6 mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">1</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Tek Tıkla Analiz</h4>
+                      <p className="text-gray-300 text-sm">URL ve anahtar kelimelerinizi girin, sihir başlasın!</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">2</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Gerçek Zamanlı Veri</h4>
+                      <p className="text-gray-300 text-sm">Google API'leri ile canlı veriler</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">3</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Kapsamlı Rapor</h4>
+                      <p className="text-gray-300 text-sm">5 farklı analiz sekmesi ile detaylı rapor</p>
+                    </div>
+                  </div>
+                </div>
+
+                <motion.a
+                  href="/seo-sihirbazi"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 rounded-full font-semibold text-white transition-all duration-300 gap-2"
+                >
+                  <BarChart3 className="w-5 h-5" />
+                  SEO Sihirbazını Deneyin
+                  <ArrowRight className="w-5 h-5" />
+                </motion.a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0">

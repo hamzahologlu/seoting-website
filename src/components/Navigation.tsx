@@ -126,6 +126,12 @@ const toolCategories = [
     color: "from-blue-500 to-indigo-500",
     tools: [
       {
+        icon: BarChart3,
+        name: "SEO Sihirbazı",
+        description: "Sihirli dokunuşlarla SEO performansınızı büyüleyin!",
+        href: "/seo-sihirbazi"
+      },
+      {
         icon: Target,
         name: "Google Sıra Bulucu",
         description: "Web sitenizin Google'daki sırasını kontrol edin",
